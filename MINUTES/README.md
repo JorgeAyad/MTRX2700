@@ -1,6 +1,20 @@
 # MTRX2700 Group 2
 
 # MTRX Group 2 - "Group Name Here"
+##  Date - 28/2/2024
+###  Present: 
+- George Ayad
+- Tom Bray
+- Peter Cruz
+
+  ### Meeting Purpose:
+
+- Planning Section 1 Assignment Coding
+- Ideation of Code
+- 
+
+
+# MTRX Group 2 - "Group Name Here"
 ##  Date - 21/02/2024
 ### Present:
 - George Ayad
