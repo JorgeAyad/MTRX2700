@@ -1,0 +1,27 @@
+.syntax unified
+.thumb
+
+.global main
+
+.data
+str: .asciz "HeLLo"
+
+.text
+
+main:
+
+	LDR R1, =str
+	LDRB R3, [R1]
+
+Character_Change: @	looping through loop
+
+	CMP R3, '\0'
+	LDRB R2, [R3]
+	BNE Letter_change
+
+	Letter_change:
+		CMP R2, #'a'
+		BGT
+		CMP R2, #'z'
+		BGT
+

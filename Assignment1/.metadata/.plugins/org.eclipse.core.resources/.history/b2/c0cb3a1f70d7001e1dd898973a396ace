@@ -1,0 +1,49 @@
+.syntax unified
+.thumb
+
+.global main
+
+.data
+str: .asciz "HeLLo\n"
+
+.text
+
+main:
+    LDR R1, =str         @ Load the address of the string into R1
+    LDRB R3, [R1]        @ Load the first character of the string into R3
+
+Character_Change:        @ Looping through the string
+    CMP R3, #'\n'        @ Check for end of string
+    BEQ EndConversion    @ Branch if end of string
+    CMP R3, #'a'         @ Compare with 'a'
+    BLT Check_Upper_l    @ Branch if less than 'a'
+    CMP R3, #'z'         @ Compare with 'z'
+    BLE Conversion_l     @ Branch if less than or equal to 'z'
+    CMP R3, #'A'         @ Compare with 'A'
+    BLT Check_Upper_C    @ Branch if less than 'A'
+    CMP R3, #'Z'         @ Compare with 'Z'
+    BLE Conversion_C     @ Branch if less than or equal to 'Z'
+    B NextCharacter      @ Branch to process next character
+
+Check_Upper_l:
+    CMP R3, #'z'         @ Compare with 'z'
+    BGT NextCharacter    @ Branch if greater than 'z'
+Conversion_l:
+    SUB R3, #'a' - #'A' @ Convert to uppercase by subtracting the difference
+    STRB R3, [R1], #1    @ Store the converted character and increment the pointer
+    B NextCharacter      @ Branch to process next character
+
+Check_Upper_C:
+    CMP R3, #'Z'         @ Compare with 'Z'
+    BGT NextCharacter    @ Branch if greater than 'Z'
+Conversion_C:
+    ADD R3, #'a' - #'A' @ Convert to lowercase by adding the difference
+    STRB R3, [R1], #1    @ Store the converted character and increment the pointer
+    B NextCharacter      @ Branch to process next character
+
+NextCharacter:
+    LDRB R3, [R1]        @ Load the next character from the string
+    B Character_Change   @ Branch to continue processing characters
+
+EndConversion:
+    @ End of conversion, do further processing or return

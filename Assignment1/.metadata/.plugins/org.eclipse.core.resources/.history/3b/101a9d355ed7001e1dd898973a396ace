@@ -1,0 +1,54 @@
+
+
+.syntax unified
+.thumb
+
+.global main
+
+
+.data
+@defining the word in use
+test_string: .asciz "HeLLo"
+
+.text
+
+main:
+
+		LDR R1, =test_string @loading the word in register 1
+		LDRB R2, [R1] @loading the first character in the word
+
+		CMP R2, #'\0'
+		BNE Conversion @loop through the word convert
+
+
+
+		Conversion:
+			@Decicision making for what type of letter
+			@LDRB R3, [R2] @keep track of letter
+
+			CMP R2, #'a'
+			BGT Check_upper_bound_l
+
+			CMP R2, #'A'
+			BGT Check_upper_bound_U
+
+		Check_upper_bound_l:
+			CMP R2, #'z'
+			BGT Upper_case_transfer
+
+
+		Check_upper_bound_U:
+			CMP R2, #'Z'
+			BGT Lower_case_Transfer
+
+		Upper_case_transfer:
+			ADD R2, R2, #32
+
+		Lower_case_transfer:
+			SUB R2, R2, #32
+
+
+
+
+
+

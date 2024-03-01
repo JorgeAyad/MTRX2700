@@ -1,0 +1,58 @@
+
+
+
+.syntax unified
+.thumb
+
+.global main
+
+.data
+test_string: .asciz "HeLLo"   @ Defining the word in use
+
+.text
+
+main:
+    LDR R1, =test_string    @ Loading the address of test_string into register R1
+    LDRB R2, [R1]           @ Loading the first character of the string into register R2
+
+Conversion:
+    CMP R2, #0              @ Compare R2 with NULL terminator
+    BEQ EndConversion       @ Branch to EndConversion if R2 is equal to NULL terminator
+
+    @ Decision making for what type of letter
+    CMP R2, #'a'            @ Compare with 'a'
+    BLT Check_upper_bound_l @ Branch if less than 'a'
+
+    CMP R2, #'A'            @ Compare with 'A'
+    BLT Check_upper_bound_U @ Branch if less than 'A'
+
+Check_upper_bound_l:
+    CMP R2, #'z'            @ Compare with 'z'
+    BGT Upper_case_transfer @ Branch if greater than 'z'
+
+Check_upper_bound_U:
+    CMP R2, #'Z'            @ Compare with 'Z'
+    BGT Lower_case_transfer @ Branch if greater than 'Z'
+
+Upper_case_transfer:
+    ADD R2, R2, #'a' - #'A' @ Convert to lowercase by adding the difference
+    B   NextCharacter       @ Branch to process next character
+
+Lower_case_transfer:
+    SUB R2, R2, #'a' - #'A' @ Convert to uppercase by subtracting the difference
+    B   NextCharacter       @ Branch to process next character
+
+NextCharacter:
+    STRB R2, [R1], #1       @ Store the converted character and increment the pointer
+    LDRB R2, [R1]           @ Load the next character from the string
+    B Conversion             @ Branch to Conversion to process next character
+
+EndConversion:
+    @ End of conversion, do further processing or return
+
+
+
+
+
+
+
