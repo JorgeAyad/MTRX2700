@@ -1,0 +1,53 @@
+.syntax unified
+.thumb
+
+.global main
+
+.data
+
+str1: .asciz "HeLlO\n"
+
+.text
+
+main:
+
+	LDR R1, =str1
+	LDRB R2, [R3]
+
+	Character_Change: //logical operations for character change
+
+		CMP R2, #'\n'
+		BNE Find_Character
+
+		Find_Character: //deciding what character is in the word
+			CMP R2, #'a'
+			BGT Check_Upper_L //finding lower case letter
+
+			CMP R2, #'A'
+			BGT Check_Upper_C //fidning upper case letter
+
+			Check_Upper_L:
+			CMP R2, #'z'
+			BLT Character_Conversion_L
+
+			Check_Upper_C:
+			CMP R2, #'Z'
+			BLT Character_Conversion_C
+
+				Character_Conversion_L: //converting, looping and going to next letter
+					ADD R2, #32
+					STRB R2, [R1]
+					LDR R2, [R1, #1]
+					B Character_Change
+
+				Character_Conversion_C:
+					SUB R2, #32
+					STRB R2, [R1]
+					LDR R2, [R1, #1]
+					B Character_Change
+
+
+
+
+
+

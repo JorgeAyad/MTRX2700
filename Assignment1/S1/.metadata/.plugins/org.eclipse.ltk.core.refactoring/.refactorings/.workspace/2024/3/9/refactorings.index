@@ -1,0 +1,4 @@
+1709348484730	Rename resource 'Section1.s'
+1709349623630	Delete resource 'Section1/Src/main.c'
+1709349628831	Delete resource 'Section1/Src/syscalls.c'
+1709349635337	Delete resource 'Section1/Src/sysmem.c'
