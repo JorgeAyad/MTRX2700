@@ -13,7 +13,7 @@ main:
     LDR R1, =str
     LDRB R3, [R1]
 
-	Character_Change: //looping through word
+	Character_Change: @    looping through word
 
         CMP R3, #'\n'
         BNE Character_Check
