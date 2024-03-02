@@ -31,13 +31,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY
  13 .comment      00000043  00000000  00000000  00020038  2**0
                   CONTENTS, READONLY
- 14 .debug_line   000000da  00000000  00000000  0002007b  2**0
+ 14 .debug_line   000000db  00000000  00000000  0002007b  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_line_str 00000078  00000000  00000000  00020155  2**0
+ 15 .debug_line_str 00000078  00000000  00000000  00020156  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_info   00000047  00000000  00000000  000201cd  2**0
+ 16 .debug_info   00000047  00000000  00000000  000201ce  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_abbrev 00000026  00000000  00000000  00020214  2**0
+ 17 .debug_abbrev 00000026  00000000  00000000  00020215  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  18 .debug_aranges 00000048  00000000  00000000  00020240  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -85,9 +85,9 @@ Disassembly of section .text:
 main:
 
 	LDR R1, =str1
- 80001d4:	490b      	ldr	r1, [pc, #44]	; (8000204 <Character_Conversion_C+0xc>)
-	LDRB R2, [R3]
- 80001d6:	781a      	ldrb	r2, [r3, #0]
+ 80001d4:	490b      	ldr	r1, [pc, #44]	; (8000204 <End+0x2>)
+	LDRB R2, [R1]
+ 80001d6:	780a      	ldrb	r2, [r1, #0]
 
 080001d8 <Character_Change>:
 
@@ -96,60 +96,66 @@ main:
 		CMP R2, #'\n'
  80001d8:	2a0a      	cmp	r2, #10
 		BNE Find_Character
- 80001da:	d1ff      	bne.n	80001dc <Find_Character>
+ 80001da:	d100      	bne.n	80001de <Find_Character>
 
-080001dc <Find_Character>:
+		B End
+ 80001dc:	e011      	b.n	8000202 <End>
+
+080001de <Find_Character>:
 
 		Find_Character: //deciding what character is in the word
 			CMP R2, #'a'
- 80001dc:	2a61      	cmp	r2, #97	; 0x61
+ 80001de:	2a61      	cmp	r2, #97	; 0x61
 			BGT Check_Upper_L //finding lower case letter
- 80001de:	dc01      	bgt.n	80001e4 <Check_Upper_L>
+ 80001e0:	dc08      	bgt.n	80001f4 <Check_Upper_L>
 
 			CMP R2, #'A'
- 80001e0:	2a41      	cmp	r2, #65	; 0x41
+ 80001e2:	2a41      	cmp	r2, #65	; 0x41
 			BGT Check_Upper_C //fidning upper case letter
- 80001e2:	dc01      	bgt.n	80001e8 <Check_Upper_C>
+ 80001e4:	dcff      	bgt.n	80001e6 <Check_Upper_C>
 
-080001e4 <Check_Upper_L>:
-
-			Check_Upper_L:
-			CMP R2, #'z'
- 80001e4:	2a7a      	cmp	r2, #122	; 0x7a
-			BLT Character_Conversion_L
- 80001e6:	db01      	blt.n	80001ec <Character_Conversion_L>
-
-080001e8 <Check_Upper_C>:
+080001e6 <Check_Upper_C>:
 
 			Check_Upper_C:
 			CMP R2, #'Z'
- 80001e8:	2a5a      	cmp	r2, #90	; 0x5a
+ 80001e6:	2a5a      	cmp	r2, #90	; 0x5a
 			BLT Character_Conversion_C
- 80001ea:	db05      	blt.n	80001f8 <Character_Conversion_C>
+ 80001e8:	dbff      	blt.n	80001ea <Character_Conversion_C>
 
-080001ec <Character_Conversion_L>:
+080001ea <Character_Conversion_C>:
 
-				Character_Conversion_L: //converting, looping and going to next letter
-					ADD R2, #32
- 80001ec:	f102 0220 	add.w	r2, r2, #32
-					STRB R2, [R1]
- 80001f0:	700a      	strb	r2, [r1, #0]
-					LDR R2, [R1, #1]
- 80001f2:	f8d1 2001 	ldr.w	r2, [r1, #1]
-					B Character_Change
- 80001f6:	e7ef      	b.n	80001d8 <Character_Change>
+			Character_Conversion_C:
+				SUB R2, R2, #32
+ 80001ea:	f1a2 0220 	sub.w	r2, r2, #32
+				STRB R2, [R1]
+ 80001ee:	700a      	strb	r2, [r1, #0]
+				LDRB R2, [R1, #1]
+ 80001f0:	784a      	ldrb	r2, [r1, #1]
+				B Character_Change
+ 80001f2:	e7f1      	b.n	80001d8 <Character_Change>
 
-080001f8 <Character_Conversion_C>:
+080001f4 <Check_Upper_L>:
 
-				Character_Conversion_C:
-					SUB R2, #32
- 80001f8:	f1a2 0220 	sub.w	r2, r2, #32
-					STRB R2, [R1]
+			Check_Upper_L:
+				CMP R2, #'z'
+ 80001f4:	2a7a      	cmp	r2, #122	; 0x7a
+				BLT Character_Conversion_L
+ 80001f6:	dbff      	blt.n	80001f8 <Character_Conversion_L>
+
+080001f8 <Character_Conversion_L>:
+
+			Character_Conversion_L: //converting, looping and going to next letter
+				ADD R2, R2, #32
+ 80001f8:	f102 0220 	add.w	r2, r2, #32
+				STRB R2, [R1]
  80001fc:	700a      	strb	r2, [r1, #0]
-					LDR R2, [R1, #1]
- 80001fe:	f8d1 2001 	ldr.w	r2, [r1, #1]
-					B Character_Change
- 8000202:	e7e9      	b.n	80001d8 <Character_Change>
+				LDRB R2, [R1, #1]
+ 80001fe:	784a      	ldrb	r2, [r1, #1]
+				B Character_Change
+ 8000200:	e7ea      	b.n	80001d8 <Character_Change>
+
+08000202 <End>:
+ 8000202:	0000      	.short	0x0000
 	LDR R1, =str1
  8000204:	20000000 	.word	0x20000000
 

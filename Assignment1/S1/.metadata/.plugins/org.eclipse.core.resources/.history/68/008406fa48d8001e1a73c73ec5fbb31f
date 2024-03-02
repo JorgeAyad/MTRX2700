@@ -1,0 +1,48 @@
+.syntax unified
+.thumb
+
+.global main
+
+.data
+
+str1: .asciz "HeLlO\n"
+
+.text
+
+main:
+    LDR R1, =str1  // Load the address of the string
+    MOV R3, #0     // Counter for the loop
+
+Character_Change:
+    LDRB R2, [R1, R3]  // Load the current character
+    CMP R2, #0         // Check if it's the end of the string
+    BEQ End
+
+    CMP R2, #'a'
+    BLT Check_Upper_C // Check if it's a lower case letter
+
+    CMP R2, #'z'
+    BGT Check_Upper_C // Check if it's a lower case letter
+
+    // Convert lower case to upper case
+    SUBS R2, R2, #'a'-'A' // Calculate the difference between lower and upper case
+    STRB R2, [R1, R3]     // Store the converted character back
+    B Continue
+
+Check_Upper_C:
+    CMP R2, #'A'
+    BLT Continue // Check if it's not an upper case letter
+
+    CMP R2, #'Z'
+    BGT Continue // Check if it's not an upper case letter
+
+    // Convert upper case to lower case
+    ADDS R2, R2, #'a'-'A' // Calculate the difference between upper and lower case
+    STRB R2, [R1, R3]     // Store the converted character back
+
+Continue:
+    ADDS R3, R3, #1  // Move to the next character
+    B Character_Change // Repeat for the next character
+
+End:
+    // Your code after finishing the loop goes here

@@ -17,7 +17,7 @@ main:
 	Character_Change: //logical operations for character change
 
 		CMP R2, #'\n'
- 		BNE Find_Character
+		BNE Find_Character
 
 		B End
 

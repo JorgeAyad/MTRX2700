@@ -1,10 +1,10 @@
-14:20:39 **** Clean-only build of configuration Debug for project Section1 ****
+15:01:12 **** Clean-only build of configuration Debug for project Section1 ****
 make -j8 clean 
 rm -rf ./Startup/startup_stm32f303vctx.d ./Startup/startup_stm32f303vctx.o
-rm -rf ./Src/1a.d ./Src/1a.o ./Src/main.cyclo ./Src/main.d ./Src/main.o ./Src/main.su ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
+rm -rf ./Src/1a.d ./Src/1a.o
 rm -rf Section1.elf Section1.list Section1.map default.size.stdout
  
-14:20:44 **** Build of configuration Debug for project Section1 ****
+15:01:18 **** Build of configuration Debug for project Section1 ****
 make -j8 all 
 arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f303vctx.d" -MT"Startup/startup_stm32f303vctx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f303vctx.o" "../Startup/startup_stm32f303vctx.s"
 arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/1a.d" -MT"Src/1a.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/1a.o" "../Src/1a.s"
@@ -27,7 +27,7 @@ Finished building: default.size.stdout
  
 Finished building: Section1.list
  
-14:20:52 **** Incremental Build of configuration Debug for project Section1 ****
+15:01:20 **** Incremental Build of configuration Debug for project Section1 ****
 make -j8 all 
 arm-none-eabi-size  Section1.elf 
    text	   data	    bss	    dec	    hex	filename
