@@ -3,21 +3,12 @@
 
 .global main
 
-.data
-inputString:  .asciz "HelloWorld123" // Input string
-outputString: .space BUFFER_SIZE      // Defining an output string buffer
-
-
-
 .equ BUFFER_SIZE, 32
 .equ ASCII_UPPERCASE_A, 65 // Defining Variables for the ASCII bounds
 .equ ASCII_UPPERCASE_Z, 90
 .equ ASCII_LOWERCASE_A, 97
 .equ ASCII_LOWERCASE_Z, 122
 .equ CONVERT_DIFFERENCE, 32
-
-.text
-
 
 main:
     // Initialize variables
@@ -39,7 +30,7 @@ loop:
 check_lowercase:
     CMP R2, #ASCII_LOWERCASE_A // Check if character is lowercase
     BLT store_char
-    CMP R2, #ASCII_LOWERCASE_Z
+    CMP R2, #ASCII_LOWERCASE_Z 
     BGT store_char
     SUB R2, R2, CONVERT_DIFFERENCE // Convert lowercase to uppercase
 
@@ -54,4 +45,6 @@ end:
     // End program
     B .
 
-
+.data
+inputString:  .asciz "HelloWorld123" // Input string
+outputString: .space BUFFER_SIZE      // Defining an output string buffer
