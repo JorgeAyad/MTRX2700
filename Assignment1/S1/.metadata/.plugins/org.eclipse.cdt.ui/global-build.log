@@ -1,10 +1,10 @@
-13:57:19 **** Clean-only build of configuration Debug for project Section1b ****
+14:16:18 **** Clean-only build of configuration Debug for project Section1b ****
 make -j8 clean 
 rm -rf ./Startup/startup_stm32f303vctx.d ./Startup/startup_stm32f303vctx.o
 rm -rf ./Src/1b.d ./Src/1b.o
 rm -rf Section1b.elf Section1b.list Section1b.map default.size.stdout
  
-13:57:24 **** Build of configuration Debug for project Section1b ****
+14:16:24 **** Build of configuration Debug for project Section1b ****
 make -j8 all 
 arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f303vctx.d" -MT"Startup/startup_stm32f303vctx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f303vctx.o" "../Startup/startup_stm32f303vctx.s"
 arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/1b.d" -MT"Src/1b.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/1b.o" "../Src/1b.s"
@@ -22,15 +22,15 @@ Finished building target: Section1b.elf
 arm-none-eabi-size  Section1b.elf 
 arm-none-eabi-objdump -h -S Section1b.elf  > "Section1b.list"
    text	   data	    bss	    dec	    hex	filename
-    736	     48	   1568	   2352	    930	Section1b.elf
+    764	     48	   1568	   2380	    94c	Section1b.elf
 Finished building: default.size.stdout
  
 Finished building: Section1b.list
  
-13:57:26 **** Incremental Build of configuration Debug for project Section1b ****
+14:16:26 **** Incremental Build of configuration Debug for project Section1b ****
 make -j8 all 
 arm-none-eabi-size  Section1b.elf 
    text	   data	    bss	    dec	    hex	filename
-    736	     48	   1568	   2352	    930	Section1b.elf
+    764	     48	   1568	   2380	    94c	Section1b.elf
 Finished building: default.size.stdout
  

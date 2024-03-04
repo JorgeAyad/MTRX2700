@@ -4,7 +4,7 @@
 .global main
 
 .data
-inputString:  .asciz "&CdE" // Input string
+inputString:  .asciz "abcde" // Input string
 outputString: .space BUFFER_SIZE      // Defining an output string buffer
 
 .equ BUFFER_SIZE, 32

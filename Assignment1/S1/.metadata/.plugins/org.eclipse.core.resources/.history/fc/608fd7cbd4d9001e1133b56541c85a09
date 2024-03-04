@@ -4,7 +4,7 @@
 .global main
 
 .data
-inputString:  .asciz "&CdE" // Input string
+inputString:  .asciz "ABCDE" // Input string
 outputString: .space BUFFER_SIZE      // Defining an output string buffer
 
 .equ BUFFER_SIZE, 32
@@ -31,22 +31,20 @@ loop:
     BLT store_char // Not uppercase
     CMP R2, #ASCII_UPPERCASE_Z //check if character is within bound of Uppercase
     BGT check_lowercase// check for lowercase
-    CMP R2, #ASCII_LOWERCASE_A
-
 
     SUB R3, R2, #ASCII_UPPERCASE_A // checking if new ascii value is outside bounds
 	CMP R3, #CONVERT_DIFFERENCE //finding whether the caeser cipher needs to wrap around
-	BGE Caeser_Cipher_no_bound_C // no wrapping
+	BGE Caeser_Cipher_no_bound // no wrapping
 	CMP R3, #CONVERT_DIFFERENCE
-	BLE Caeser_Cipher_bounded_C //wrapping
+	BLE Caeser_Cipher_bounded //wrapping
 
-Caeser_Cipher_bounded_C:
+Caeser_Cipher_bounded:
 	SUB R4, R3, #CONVERT_DIFFERENCE //finding how much it needs to carry
 	ADD R4, R4, #1
 	ADD R2, R4, #ASCII_UPPERCASE_Z //performing caeser cipher
 	B store_char
 
-Caeser_Cipher_no_bound_C:
+Caeser_Cipher_no_bound:
 	SUB R2, R2, #CONVERT_DIFFERENCE
 	B store_char
 
@@ -55,23 +53,7 @@ check_lowercase:
     BLT store_char
     CMP R2, #ASCII_LOWERCASE_Z
     BGT store_char
-
-    SUB R3, R2, #ASCII_LOWERCASE_A // checking if new ascii value is outside bounds
-	CMP R3, #CONVERT_DIFFERENCE //finding whether the caeser cipher needs to wrap around
-	BGE Caeser_Cipher_no_bound_L // no wrapping
-	CMP R3, #CONVERT_DIFFERENCE
-	BLE Caeser_Cipher_bounded_L //wrapping
-
-Caeser_Cipher_bounded_L:
-	SUB R4, R3, #CONVERT_DIFFERENCE //finding how much it needs to carry
-	ADD R4, R4, #1
-	ADD R2, R4, #ASCII_LOWERCASE_Z //performing caeser cipher
-	B store_char
-
-Caeser_Cipher_no_bound_L:
-	SUB R2, R2, #CONVERT_DIFFERENCE
-	B store_char
-
+    SUB R2, R2, CONVERT_DIFFERENCE // Convert lowercase to uppercase
 
 store_char:
     STRB R2, [R1], #1      // Store byte into output string and increments pointer
