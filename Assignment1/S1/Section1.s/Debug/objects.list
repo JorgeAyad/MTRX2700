@@ -1,2 +1,3 @@
 "./Src/1a.o"
+"./Src/1b.o"
 "./Startup/startup_stm32f303vctx.o"
