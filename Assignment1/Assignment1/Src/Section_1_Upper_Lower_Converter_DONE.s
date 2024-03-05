@@ -10,6 +10,12 @@
 .equ ASCII_LOWERCASE_Z, 122
 .equ CONVERT_DIFFERENCE, 32
 
+.data
+inputString:  .asciz "HelloWorld123" // Input string
+outputString: .space BUFFER_SIZE      // Defining an output string buffer
+
+.text
+
 main:
     // Initialize variables
     LDR R0, =inputString   // Load address of the input string
