@@ -1,10 +1,10 @@
-23:18:14 **** Incremental Build of configuration Debug for project Section1c ****
+23:31:39 **** Incremental Build of configuration Debug for project Section1c ****
 make -j8 all 
 arm-none-eabi-size  Section1c.elf 
    text	   data	    bss	    dec	    hex	filename
-    884	     96	   1568	   2548	    9f4	Section1c.elf
+    880	     96	   1568	   2544	    9f0	Section1c.elf
 Finished building: default.size.stdout
  
 
-23:18:14 Build Finished. 0 errors, 0 warnings. (took 306ms)
+23:31:39 Build Finished. 0 errors, 0 warnings. (took 258ms)
 

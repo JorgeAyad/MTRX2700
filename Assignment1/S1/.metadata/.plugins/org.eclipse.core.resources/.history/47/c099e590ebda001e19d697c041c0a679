@@ -4,7 +4,7 @@
 .global main
 
 .data
-inputString: .asciz "&JKw" // Input string
+inputString: .asciz "AbCd" // Input string
 outputString: .space BUFFER_SIZE      // Defining an output string buffer
 encoded_alphabet: .byte 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'
 decoded_alphabet: .byte 'J', 'U', 'K', 'W','D','Q','F','A','P','O','E','N','C','Z','X','G','Y','V','R','M','L','I','S','H','T'
@@ -49,6 +49,7 @@ Encode:
     LDR R7, =0           // Initialize offset
     MOV R8, R5           // Move input character to R8 for comparison
 encode_loop:
+    SUB R3, R3, #32
     LDRB R9, [R3, R7]   // Load character from encoded alphabet
     CMP R8, R9           // Compare input character with encoded character
     BEQ code_found       // If a match is found, jump to code_found

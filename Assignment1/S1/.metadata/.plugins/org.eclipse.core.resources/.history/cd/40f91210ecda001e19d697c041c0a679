@@ -4,7 +4,7 @@
 .global main
 
 .data
-inputString: .asciz "&JKw" // Input string
+inputString: .asciz "AbCd" // Input string
 outputString: .space BUFFER_SIZE      // Defining an output string buffer
 encoded_alphabet: .byte 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'
 decoded_alphabet: .byte 'J', 'U', 'K', 'W','D','Q','F','A','P','O','E','N','C','Z','X','G','Y','V','R','M','L','I','S','H','T'
@@ -17,7 +17,7 @@ decoded_alphabet: .byte 'J', 'U', 'K', 'W','D','Q','F','A','P','O','E','N','C','
 .equ ASCII_LOWERCASE_A, 97
 .equ ASCII_LOWERCASE_Z, 122
 .equ CONVERT_DIFFERENCE, 0
-.equ MODE, 1
+.equ MODE, 0
 
 .text
 

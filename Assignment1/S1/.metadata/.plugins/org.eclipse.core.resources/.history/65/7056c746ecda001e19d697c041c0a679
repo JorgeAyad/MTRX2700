@@ -4,7 +4,7 @@
 .global main
 
 .data
-inputString: .asciz "&JKw" // Input string
+inputString: .asciz "JuKw" // Input string
 outputString: .space BUFFER_SIZE      // Defining an output string buffer
 encoded_alphabet: .byte 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'
 decoded_alphabet: .byte 'J', 'U', 'K', 'W','D','Q','F','A','P','O','E','N','C','Z','X','G','Y','V','R','M','L','I','S','H','T'
