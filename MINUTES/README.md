@@ -1,6 +1,42 @@
 # MTRX2700 Group 2
 
 # MTRX Group 2 - "Group Name Here"
+##  Date - 6/3/2024
+###  Present: 
+- George Ayad - Section 2
+- Peter Cruz - Section 3
+- Tom Bray - Section 4
+- Jamie - Section 2 *New member*
+
+### Meeting Purpose:
+
+- Code Section 2
+- Start 3 and 4 
+- Clean up Code
+
+### Previous Sections
+  
+  - Work on Sections 1 & 2
+  - Attempt to complete base code for each section
+
+### Current Items
+
+  - Work on Sections 2 & 3 & 4
+ 
+### New Items
+
+  - Code Section 2 Ideally majority by following week
+  - Start Code for Section 3 and 4
+  - View Week 4 Pre Lecture/Debug IDE and code
+
+### Next Meeting Date
+
+13/03/2024
+
+
+# MTRX2700 Group 2
+
+# MTRX Group 2 - "Group Name Here"
 ##  Date - 1/3/2024
 ###  Present: 
 - George Ayad - Section 1 & 2
