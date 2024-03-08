@@ -1,0 +1,59 @@
+.syntax unified
+.thumb
+//taken from Worall's archives
+#include "definitions.s"
+#include "initialise.s"
+
+
+.data
+
+.equ RCC_AHBENR, 0x40021014
+.equ GPIOA_BASE, 0x48000000
+.equ GPIOA_MODER, 0x00
+.equ GPIOA_IDR, 0x10
+
+.text
+.global main
+
+
+main:
+    // Enable GPIOA clock
+    LDR R1, =RCC_AHBENR
+    LDR R2, [R1]
+    ORR R2, R2, #0x00020000 // Set bit 17 for GPIOA
+    STR R2, [R1]
+
+    // Configure PA0 as input
+    LDR R1, =GPIOA_BASE
+    LDR R2, =GPIOA_MODER
+    LDR R3, [R1, R2]
+    BIC R3, R3, #0x00000003 // Clear bits 0 and 1 (PA0)
+    STR R3, [R1, R2]
+    BL enable_peripheral_clocks
+    BL initialise_discovery_board
+
+    B program_loop
+
+program_loop:
+	LDR R0, =GPIOE //Loading the address of GPIOE
+	LDR R5, =0b00000000//load a pattern for the set of LEDs
+	STRB R5, [R0, #ODR +1] //Stores to the second byte of the ODR
+	LDR R4, =0b000000001 // bit mask
+	B Button_Loop
+
+Button_Loop:
+    // Read input from PA0 (Button)
+    LDR R3, =GPIOA
+    LDR R3, [R1, #GPIOA_IDR]
+    TST R3, #0x00000001 	// Check if PA0 is high (button pressed)
+    BEQ button_pressed   	//Branch if button is pressed
+    B Button_Loop               //Otherwise, keep looping
+
+button_pressed:
+    //Put function for when button is pressed here
+
+	ORR R5, R4, R5 //Perform OR logical operator and Store result in R4
+	LSL R4, R4, #1
+	STRB R5, [R0, #ODR +1]
+    B Button_Loop // Continue monitoring the button state
+

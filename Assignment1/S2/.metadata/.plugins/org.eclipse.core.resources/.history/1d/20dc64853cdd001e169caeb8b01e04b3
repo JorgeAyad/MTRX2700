@@ -1,0 +1,38 @@
+.syntax unified
+.thumb
+
+#include "definitions.s"
+#include "initialise.s"
+
+.text
+.global main
+
+main:
+	BL enable_peripheral_clocks
+
+    // Button enable (input)
+    LDR R0, =GPIOA         // Loading port A address into R0 register
+    LDRB R1, [R0, #MODER]  // Loading the byte from GPIOA MODER (offset 0x00)
+    AND R1, #0b11111100    // Bitmasking to change only the last two bits (bits 0 and 1)
+    STRB R1, [R0, #MODER]  // Save back to GPIOA MODER
+
+    //LED enable (output)
+   LDR R2, =GPIOE          // Address of GPIOE
+   LDR R3, [R2, #MODER]    // Loading the high half-word from the MODER register (offset 0x02)
+   MOV R4, #0x5555         // Binary value of 01 (output mode) for each upper two bytes (0x5 = 0101)
+   STRH R4, [R2, #MODER]   // Saving into MODER register
+
+   MOV R5, #0              // Load LED pattern into a register
+
+    B loop
+
+loop:
+    LDRB R1, [R0, #IDR]    // Read the input from GPIOA IDR
+    ANDS R1, #0x01          // Check if button is on
+    BNE button_pressed      // Branch if button is pressed
+    B loop
+
+button_pressed:
+    ORR R4, R5, #0b00000001 // Set the LED pattern
+    STRB R4, [R2, #ODR]     // Save the LED pattern
+    B loop

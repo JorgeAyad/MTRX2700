@@ -1,14 +1,14 @@
-23:31:23 **** Clean-only build of configuration Debug for project Section1c ****
+23:36:01 **** Clean-only build of configuration Debug for project Section1b ****
 make -j8 clean 
 rm -rf ./Startup/startup_stm32f303vctx.d ./Startup/startup_stm32f303vctx.o
-rm -rf ./Src/1c.d ./Src/1c.o
-rm -rf Section1c.elf Section1c.list Section1c.map default.size.stdout
+rm -rf ./Src/1b.d ./Src/1b.o
+rm -rf Section1b.elf Section1b.list Section1b.map default.size.stdout
  
-23:31:36 **** Build of configuration Debug for project Section1c ****
+23:36:06 **** Build of configuration Debug for project Section1b ****
 make -j8 all 
 arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f303vctx.d" -MT"Startup/startup_stm32f303vctx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f303vctx.o" "../Startup/startup_stm32f303vctx.s"
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/1c.d" -MT"Src/1c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/1c.o" "../Src/1c.s"
-arm-none-eabi-gcc -o "Section1c.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\georg\Documents\GitHub\MTRX2700\Assignment1\S1\Section1c\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Section1c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/1b.d" -MT"Src/1b.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/1b.o" "../Src/1b.s"
+arm-none-eabi-gcc -o "Section1b.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\georg\Documents\GitHub\MTRX2700\Assignment1\S1\Section1b\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Section1b.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-closer.o): in function `_close_r':
 (.text._close_r+0xc): warning: _close is not implemented and will always fail
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lseekr.o): in function `_lseek_r':
@@ -17,20 +17,20 @@ C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube
 (.text._read_r+0x10): warning: _read is not implemented and will always fail
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-writer.o): in function `_write_r':
 (.text._write_r+0x10): warning: _write is not implemented and will always fail
-Finished building target: Section1c.elf
+Finished building target: Section1b.elf
  
-arm-none-eabi-size  Section1c.elf 
-arm-none-eabi-objdump -h -S Section1c.elf  > "Section1c.list"
+arm-none-eabi-size  Section1b.elf 
+arm-none-eabi-objdump -h -S Section1b.elf  > "Section1b.list"
    text	   data	    bss	    dec	    hex	filename
-    880	     96	   1568	   2544	    9f0	Section1c.elf
+    764	     48	   1568	   2380	    94c	Section1b.elf
 Finished building: default.size.stdout
  
-Finished building: Section1c.list
+Finished building: Section1b.list
  
-23:31:39 **** Incremental Build of configuration Debug for project Section1c ****
+23:36:10 **** Incremental Build of configuration Debug for project Section1b ****
 make -j8 all 
-arm-none-eabi-size  Section1c.elf 
+arm-none-eabi-size  Section1b.elf 
    text	   data	    bss	    dec	    hex	filename
-    880	     96	   1568	   2544	    9f0	Section1c.elf
+    764	     48	   1568	   2380	    94c	Section1b.elf
 Finished building: default.size.stdout
  

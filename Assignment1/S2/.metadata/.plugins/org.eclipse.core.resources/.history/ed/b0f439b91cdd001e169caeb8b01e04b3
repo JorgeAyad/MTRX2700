@@ -1,0 +1,39 @@
+.syntax unified
+.thumb
+
+.data
+
+.equ RCC_AHBENR, 0x40021014
+.equ GPIOA_BASE, 0x48000000
+.equ GPIOA_MODER, 0x00
+.equ GPIOA_IDR, 0x10
+
+.text
+.global main
+
+
+main:
+    // Enable GPIOA clock
+    LDR R4, =RCC_AHBENR
+    LDR R5, [R4]
+    ORR R5, R5, #0x00020000 // Set bit 17 for GPIOA
+    STR R5, [R4]
+
+    // Configure PA0 as input
+    LDR R6, =GPIOA_BASE
+    LDR R7, =GPIOA_MODER
+    LDR R8, [R1, R2]
+    BIC R8, R8, #0x00000003 // Clear bits 0 and 1 (PA0)
+    STR R8, [R6, R7]
+
+loop:
+    // Read input from PA0 (Button)
+    LDR R9, [R6, #GPIOA_IDR]
+    TST R9, #0x00000001 // Check if PA0 is high (button pressed)
+    BNE button_pressed   // Branch if button is pressed
+    B loop               // Otherwise, keep looping
+
+button_pressed:
+    //Put function for when button is pressed here
+
+    B loop // Continue monitoring the button state

@@ -208,7 +208,7 @@ end:
     LDR R0, =inputString   // Load address of the input string
  8000240:	20000000 	.word	0x20000000
     LDR R1, =outputString  // Load address of the output string
- 8000244:	20000005 	.word	0x20000005
+ 8000244:	20000006 	.word	0x20000006
 
 08000248 <Reset_Handler>:
 
