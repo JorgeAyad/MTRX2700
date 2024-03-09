@@ -1,0 +1,61 @@
+.syntax unified
+.thumb
+
+#include "definitions.s"
+#include "initialise.s"
+
+.text
+.global main
+
+main:
+    // Button enable (input)
+    LDR R0, =GPIOA         // Loading port A address into R0 register
+    LDRB R1, [R0, #MODER]  // Loading the byte from GPIOA MODER (offset 0x00)
+    AND R1, #0b11111100    // Bitmasking to change only the last two bits (bits 0 and 1)
+    STRB R1, [R0, #MODER]  // Save back to GPIOA MODER
+
+	MOV R6, #0 //this is the mode for going forwads, 1 is for going backwards
+	BL enable_peripheral_clocks
+	BL initialise_discovery_board
+
+	MOV R4, #0              // Load LED pattern into a register
+	LDRB R5, =0b00000001
+    B loop
+
+loop:
+    LDRB R1, [R0, #IDR]    // Read the input from GPIOA IDR
+    ANDS R1, #0x01          // Check if button is on
+    BEQ button_pressed      // Branch if button is pressed
+    B loop
+
+button_pressed:
+    CMP R4, #0b11111111
+    BEQ change_mode_descending // If R4 equals 0b11111111, branch to change_mode_descending
+
+    CMP R6, #1
+    BEQ descending_pattern // If R6 equals 1, branch to descending_pattern
+
+    // If none of the above conditions are met, continue with the original logic
+    ORR R4, R4, R5 // Set the LED pattern
+    LSL R5, R5, #0x01
+    STRB R4, [R0, #ODR + 1]     // Save the LED pattern
+    B loop
+
+change_mode_descending:
+    MOV R6, #1 // Set R6 to 1 to indicate descending mode
+    BX LR
+
+descending_pattern:
+	LSR R5, R5, #0x01
+    EOR R4, R4, R5
+    STRB R4, [R0, #ODR + 1]
+
+    CMP R4, #0
+    BEQ change_mode_ascending // If R4 equals 0, branch to change_mode_ascending
+
+    B loop
+
+change_mode_ascending:
+    MOV R6, #0 // Set R6 to 0 to indicate ascending mode
+    BX LR
+
