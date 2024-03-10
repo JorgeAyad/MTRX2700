@@ -22,3 +22,4 @@ initialise_discovery_board:
 								@ the MODER settings for pe8-15
 	BX LR @ return from function call
 
+//1 << GPIOA_ENABLE

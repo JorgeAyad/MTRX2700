@@ -118,14 +118,14 @@ initialise_discovery_board:
 
 main:
     // Button enable (input)
-    LDR R0, =GPIOA         // Loading port A address into R0 register
- 80001ea:	f04f 4090 	mov.w	r0, #1207959552	; 0x48000000
-    LDRB R1, [R0, #MODER]  // Loading the byte from GPIOA MODER (offset 0x00)
- 80001ee:	7801      	ldrb	r1, [r0, #0]
-    AND R1, #0b11111100    // Bitmasking to change only the last two bits (bits 0 and 1)
- 80001f0:	f001 01fc 	and.w	r1, r1, #252	; 0xfc
-    STRB R1, [R0, #MODER]  // Save back to GPIOA MODER
- 80001f4:	7001      	strb	r1, [r0, #0]
+    LDR R2, =GPIOA         // Loading port A address into R0 register
+ 80001ea:	f04f 4290 	mov.w	r2, #1207959552	; 0x48000000
+    LDRB R3, [R0, #MODER]  // Loading the byte from GPIOA MODER (offset 0x00)
+ 80001ee:	7803      	ldrb	r3, [r0, #0]
+    AND R3, #0b11111100    // Bitmasking to change only the last two bits (bits 0 and 1)
+ 80001f0:	f003 03fc 	and.w	r3, r3, #252	; 0xfc
+    STRB R3, [R2, #MODER]  // Save back to GPIOA MODER
+ 80001f4:	7013      	strb	r3, [r2, #0]
 
     BL enable_peripheral_clocks
  80001f6:	f7ff ffed 	bl	80001d4 <enable_peripheral_clocks>
@@ -141,10 +141,10 @@ main:
 08000208 <loop>:
 
 loop:
-    LDRB R3, [R0, #IDR]    // Read the input from GPIOA IDR
- 8000208:	7c03      	ldrb	r3, [r0, #16]
-    ANDS R3, #0x01          // Check if button is on
- 800020a:	f013 0301 	ands.w	r3, r3, #1
+    LDRB R6, [R2, #IDR]    // Read the input from GPIOA IDR
+ 8000208:	7c16      	ldrb	r6, [r2, #16]
+    ANDS R6, #0x01          // Check if button is on
+ 800020a:	f016 0601 	ands.w	r6, r6, #1
     BNE button_pressed      // Branch if button is pressed
  800020e:	d100      	bne.n	8000212 <button_pressed>
     B loop

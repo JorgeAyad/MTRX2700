@@ -1,6 +1,2 @@
-2024-03-10 18:30:17,886 [ERROR] ConfigurationRetriever:142 - IOException on connection: sw-center.st.com
-2024-03-10 18:30:17,903 [ERROR] ConfigurationRetriever:142 - IOException on connection: sw-center.st.com
-2024-03-10 18:30:17,904 [ERROR] ConfigurationRetriever:142 - IOException on connection: sw-center.st.com
-2024-03-10 18:30:18,574 [ERROR] ConfigurationRetriever:142 - IOException on connection: sw-center.st.com
-2024-03-10 18:30:18,575 [ERROR] ConfigurationRetriever:142 - IOException on connection: sw-center.st.com
-2024-03-10 18:30:18,575 [ERROR] ConfigurationRetriever:142 - IOException on connection: sw-center.st.com
+2024-03-11 10:13:04,091 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out
+2024-03-11 10:13:06,133 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Read timed out

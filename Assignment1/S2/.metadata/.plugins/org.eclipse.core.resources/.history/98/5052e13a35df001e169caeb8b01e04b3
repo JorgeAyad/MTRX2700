@@ -9,10 +9,10 @@
 
 main:
     // Button enable (input)
-    LDR R2, =GPIOA         // Loading port A address into R0 register
-    LDRB R3, [R0, #MODER]  // Loading the byte from GPIOA MODER (offset 0x00)
-    AND R3, #0b11111100    // Bitmasking to change only the last two bits (bits 0 and 1)
-    STRB R3, [R2, #MODER]  // Save back to GPIOA MODER
+    LDR R0, =GPIOA         // Loading port A address into R0 register
+    LDRB R1, [R0, #MODER]  // Loading the byte from GPIOA MODER (offset 0x00)
+    AND R1, #0b11111100    // Bitmasking to change only the last two bits (bits 0 and 1)
+    STRB R1, [R0, #MODER]  // Save back to GPIOA MODER
 
     BL enable_peripheral_clocks
     BL initialise_discovery_board
@@ -21,8 +21,8 @@ main:
     B loop
 
 loop:
-    LDRB R6, [R2, #IDR]    // Read the input from GPIOA IDR
-    ANDS R6, #0x01          // Check if button is on
+    LDRB R3, [R1, #IDR]    // Read the input from GPIOA IDR
+    ANDS R3, #0x01          // Check if button is on
     BNE button_pressed      // Branch if button is pressed
     B loop
 
