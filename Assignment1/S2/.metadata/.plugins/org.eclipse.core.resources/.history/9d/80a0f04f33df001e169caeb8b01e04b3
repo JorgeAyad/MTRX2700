@@ -23,7 +23,7 @@ main:
 loop:
     LDRB R3, [R0, #IDR]    // Read the input from GPIOA IDR
     ANDS R3, #0x01          // Check if button is on
-    BNE button_pressed      // Branch if button is pressed
+    BEQ button_pressed      // Branch if button is pressed
     B loop
 
 button_pressed:

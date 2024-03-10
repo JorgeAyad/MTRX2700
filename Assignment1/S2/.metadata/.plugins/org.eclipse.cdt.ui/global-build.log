@@ -1,10 +1,10 @@
-19:48:27 **** Clean-only build of configuration Debug for project Section2b ****
+10:09:15 **** Clean-only build of configuration Debug for project Section2b ****
 make -j8 clean 
 rm -rf ./Startup/startup_stm32f303vctx.d ./Startup/startup_stm32f303vctx.o
 rm -rf ./Src/2b.d ./Src/2b.o ./Src/definitions.d ./Src/definitions.o ./Src/initialise.d ./Src/initialise.o
 rm -rf Section2b.elf Section2b.list Section2b.map default.size.stdout
  
-19:48:34 **** Build of configuration Debug for project Section2b ****
+10:09:22 **** Build of configuration Debug for project Section2b ****
 make -j8 all 
 arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f303vctx.d" -MT"Startup/startup_stm32f303vctx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f303vctx.o" "../Startup/startup_stm32f303vctx.s"
 arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/2b.d" -MT"Src/2b.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/2b.o" "../Src/2b.s"
@@ -24,19 +24,19 @@ Finished building target: Section2b.elf
 arm-none-eabi-size  Section2b.elf 
 arm-none-eabi-objdump -h -S Section2b.elf  > "Section2b.list"
    text	   data	    bss	    dec	    hex	filename
-    776	      8	   1568	   2352	    930	Section2b.elf
+    732	      8	   1568	   2308	    904	Section2b.elf
 Finished building: default.size.stdout
  
 Finished building: Section2b.list
  
-19:48:37 **** Incremental Build of configuration Debug for project Section2b ****
+10:09:25 **** Incremental Build of configuration Debug for project Section2b ****
 make -j8 all 
 arm-none-eabi-size  Section2b.elf 
    text	   data	    bss	    dec	    hex	filename
-    776	      8	   1568	   2352	    930	Section2b.elf
+    732	      8	   1568	   2308	    904	Section2b.elf
 Finished building: default.size.stdout
  
-19:51:56 **** Incremental Build of configuration Debug for project Section2b ****
+10:09:57 **** Incremental Build of configuration Debug for project Section2b ****
 make -j8 all 
 arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/2b.d" -MT"Src/2b.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/2b.o" "../Src/2b.s"
 arm-none-eabi-gcc -o "Section2b.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\georg\Documents\GitHub\MTRX2700\Assignment1\S2\Section2b\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Section2b.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -53,8 +53,15 @@ Finished building target: Section2b.elf
 arm-none-eabi-size  Section2b.elf 
 arm-none-eabi-objdump -h -S Section2b.elf  > "Section2b.list"
    text	   data	    bss	    dec	    hex	filename
-    776	      8	   1568	   2352	    930	Section2b.elf
+    732	      8	   1568	   2308	    904	Section2b.elf
 Finished building: default.size.stdout
  
 Finished building: Section2b.list
+ 
+10:10:35 **** Incremental Build of configuration Debug for project Section2b ****
+make -j8 all 
+arm-none-eabi-size  Section2b.elf 
+   text	   data	    bss	    dec	    hex	filename
+    732	      8	   1568	   2308	    904	Section2b.elf
+Finished building: default.size.stdout
  

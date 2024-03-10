@@ -21,5 +21,3 @@ initialise_discovery_board:
 	STRH R1, [R0, #MODER + 2]   @ store the new register values in the top half word representing
 								@ the MODER settings for pe8-15
 	BX LR @ return from function call
-
-//1 << GPIOA_ENABLE
