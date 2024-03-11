@@ -54,10 +54,11 @@ button_pressed_ascending:
     B loop
 
 button_pressed_descending:
-	LSR R5, R5, #0x01
+
 	EOR R4, R4, R5
+	LSR R5, R5, #0x01
 	STRB R4, [R0, #ODR + 1]
-	CMP R4, 0b100000000
+	CMP R4, 0b11111111
 	BEQ Reset_LEDs
 	B loop
 

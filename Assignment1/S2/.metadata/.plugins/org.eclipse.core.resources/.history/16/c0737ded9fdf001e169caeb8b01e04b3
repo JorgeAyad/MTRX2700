@@ -32,7 +32,7 @@ loop:
     B loop
 
 Mode_Change:
-	CMP R4, #0
+	CMP R4, 0b00000000
 	BEQ Change_Mode_Ascending
 
 	CMP R4, 0b11111111
@@ -54,16 +54,12 @@ button_pressed_ascending:
     B loop
 
 button_pressed_descending:
-	LSR R5, R5, #0x01
+
 	EOR R4, R4, R5
+	LSR R5, R5, #0x01
 	STRB R4, [R0, #ODR + 1]
-	CMP R4, 0b100000000
-	BEQ Reset_LEDs
 	B loop
 
-Reset_LEDs:
-	MOV R4, #0
-	B button_pressed_descending
 
 Change_Mode_Descending:
 	MOV R8, #1
