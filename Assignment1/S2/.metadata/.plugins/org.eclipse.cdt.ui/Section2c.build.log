@@ -1,4 +1,4 @@
-23:28:55 **** Incremental Build of configuration Debug for project Section2c ****
+15:00:45 **** Incremental Build of configuration Debug for project Section2c ****
 make -j8 all 
 arm-none-eabi-size  Section2c.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size  Section2c.elf
 Finished building: default.size.stdout
  
 
-23:28:55 Build Finished. 0 errors, 0 warnings. (took 242ms)
+15:00:45 Build Finished. 0 errors, 0 warnings. (took 260ms)
 

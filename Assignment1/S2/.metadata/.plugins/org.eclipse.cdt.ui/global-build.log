@@ -1,16 +1,16 @@
-11:26:53 **** Clean-only build of configuration Debug for project Section2c ****
+14:26:41 **** Clean-only build of configuration Debug for project Section2d ****
 make -j8 clean 
 rm -rf ./Startup/startup_stm32f303vctx.d ./Startup/startup_stm32f303vctx.o
-rm -rf ./Src/2c.d ./Src/2c.o ./Src/definitions.d ./Src/definitions.o ./Src/initialise.d ./Src/initialise.o
-rm -rf Section2c.elf Section2c.list Section2c.map default.size.stdout
+rm -rf ./Src/2d.d ./Src/2d.o ./Src/definitions.d ./Src/definitions.o ./Src/initialise.d ./Src/initialise.o
+rm -rf Section2d.elf Section2d.list Section2d.map default.size.stdout
  
-11:26:56 **** Build of configuration Debug for project Section2c ****
+14:26:45 **** Build of configuration Debug for project Section2d ****
 make -j8 all 
 arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f303vctx.d" -MT"Startup/startup_stm32f303vctx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f303vctx.o" "../Startup/startup_stm32f303vctx.s"
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/2c.d" -MT"Src/2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/2c.o" "../Src/2c.s"
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/2d.d" -MT"Src/2d.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/2d.o" "../Src/2d.s"
 arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/definitions.d" -MT"Src/definitions.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/definitions.o" "../Src/definitions.s"
 arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/initialise.d" -MT"Src/initialise.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/initialise.o" "../Src/initialise.s"
-arm-none-eabi-gcc -o "Section2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\georg\Documents\GitHub\MTRX2700\Assignment1\S2\Section2c\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Section2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+arm-none-eabi-gcc -o "Section2d.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\georg\Documents\GitHub\MTRX2700\Assignment1\S2\Section2d\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Section2d.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-closer.o): in function `_close_r':
 (.text._close_r+0xc): warning: _close is not implemented and will always fail
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lseekr.o): in function `_lseek_r':
@@ -19,15 +19,27 @@ C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube
 (.text._read_r+0x10): warning: _read is not implemented and will always fail
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-writer.o): in function `_write_r':
 (.text._write_r+0x10): warning: _write is not implemented and will always fail
-C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Src/2c.o: in function `loop':
-C:/Users/georg/Documents/GitHub/MTRX2700/Assignment1/S2/Section2c/Debug/../Src/2c.s:31: undefined reference to `Moder_Change'
-collect2.exe: error: ld returned 1 exit status
-make: *** [makefile:63: Section2c.elf] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-11:27:20 **** Incremental Build of configuration Debug for project Section2c ****
+Finished building target: Section2d.elf
+ 
+arm-none-eabi-size  Section2d.elf 
+arm-none-eabi-objdump -h -S Section2d.elf  > "Section2d.list"
+   text	   data	    bss	    dec	    hex	filename
+    780	     16	   1568	   2364	    93c	Section2d.elf
+Finished building: default.size.stdout
+ 
+Finished building: Section2d.list
+ 
+14:26:48 **** Incremental Build of configuration Debug for project Section2d ****
 make -j8 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/2c.d" -MT"Src/2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/2c.o" "../Src/2c.s"
-arm-none-eabi-gcc -o "Section2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\georg\Documents\GitHub\MTRX2700\Assignment1\S2\Section2c\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Section2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+arm-none-eabi-size  Section2d.elf 
+   text	   data	    bss	    dec	    hex	filename
+    780	     16	   1568	   2364	    93c	Section2d.elf
+Finished building: default.size.stdout
+ 
+14:27:31 **** Incremental Build of configuration Debug for project Section2d ****
+make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/2d.d" -MT"Src/2d.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/2d.o" "../Src/2d.s"
+arm-none-eabi-gcc -o "Section2d.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\georg\Documents\GitHub\MTRX2700\Assignment1\S2\Section2d\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Section2d.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-closer.o): in function `_close_r':
 (.text._close_r+0xc): warning: _close is not implemented and will always fail
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lseekr.o): in function `_lseek_r':
@@ -36,20 +48,20 @@ C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube
 (.text._read_r+0x10): warning: _read is not implemented and will always fail
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-writer.o): in function `_write_r':
 (.text._write_r+0x10): warning: _write is not implemented and will always fail
-Finished building target: Section2c.elf
+Finished building target: Section2d.elf
  
-arm-none-eabi-size  Section2c.elf 
-arm-none-eabi-objdump -h -S Section2c.elf  > "Section2c.list"
+arm-none-eabi-size  Section2d.elf 
+arm-none-eabi-objdump -h -S Section2d.elf  > "Section2d.list"
    text	   data	    bss	    dec	    hex	filename
-    780	      8	   1568	   2356	    934	Section2c.elf
+    776	     16	   1568	   2360	    938	Section2d.elf
 Finished building: default.size.stdout
  
-Finished building: Section2c.list
+Finished building: Section2d.list
  
-11:28:03 **** Incremental Build of configuration Debug for project Section2c ****
+14:29:31 **** Incremental Build of configuration Debug for project Section2d ****
 make -j8 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/2c.d" -MT"Src/2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/2c.o" "../Src/2c.s"
-arm-none-eabi-gcc -o "Section2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\georg\Documents\GitHub\MTRX2700\Assignment1\S2\Section2c\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Section2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/2d.d" -MT"Src/2d.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/2d.o" "../Src/2d.s"
+arm-none-eabi-gcc -o "Section2d.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\georg\Documents\GitHub\MTRX2700\Assignment1\S2\Section2d\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Section2d.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-closer.o): in function `_close_r':
 (.text._close_r+0xc): warning: _close is not implemented and will always fail
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lseekr.o): in function `_lseek_r':
@@ -58,15 +70,20 @@ C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube
 (.text._read_r+0x10): warning: _read is not implemented and will always fail
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-writer.o): in function `_write_r':
 (.text._write_r+0x10): warning: _write is not implemented and will always fail
-C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Src/2c.o: in function `Button_Pressed':
-C:/Users/georg/Documents/GitHub/MTRX2700/Assignment1/S2/Section2c/Debug/../Src/2c.s:46: undefined reference to `button_pressed_descend'
-collect2.exe: error: ld returned 1 exit status
-make: *** [makefile:63: Section2c.elf] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-11:28:16 **** Incremental Build of configuration Debug for project Section2c ****
+Finished building target: Section2d.elf
+ 
+arm-none-eabi-size  Section2d.elf 
+arm-none-eabi-objdump -h -S Section2d.elf  > "Section2d.list"
+   text	   data	    bss	    dec	    hex	filename
+    776	     16	   1568	   2360	    938	Section2d.elf
+Finished building: default.size.stdout
+ 
+Finished building: Section2d.list
+ 
+14:32:09 **** Incremental Build of configuration Debug for project Section2d ****
 make -j8 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/2c.d" -MT"Src/2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/2c.o" "../Src/2c.s"
-arm-none-eabi-gcc -o "Section2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\georg\Documents\GitHub\MTRX2700\Assignment1\S2\Section2c\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Section2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/2d.d" -MT"Src/2d.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/2d.o" "../Src/2d.s"
+arm-none-eabi-gcc -o "Section2d.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\georg\Documents\GitHub\MTRX2700\Assignment1\S2\Section2d\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Section2d.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-closer.o): in function `_close_r':
 (.text._close_r+0xc): warning: _close is not implemented and will always fail
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lseekr.o): in function `_lseek_r':
@@ -75,20 +92,27 @@ C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube
 (.text._read_r+0x10): warning: _read is not implemented and will always fail
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-writer.o): in function `_write_r':
 (.text._write_r+0x10): warning: _write is not implemented and will always fail
-Finished building target: Section2c.elf
+Finished building target: Section2d.elf
  
-arm-none-eabi-size  Section2c.elf 
-arm-none-eabi-objdump -h -S Section2c.elf  > "Section2c.list"
+arm-none-eabi-size  Section2d.elf 
+arm-none-eabi-objdump -h -S Section2d.elf  > "Section2d.list"
    text	   data	    bss	    dec	    hex	filename
-    780	      8	   1568	   2356	    934	Section2c.elf
+    772	     16	   1568	   2356	    934	Section2d.elf
 Finished building: default.size.stdout
  
-Finished building: Section2c.list
+Finished building: Section2d.list
  
-11:30:51 **** Incremental Build of configuration Debug for project Section2c ****
+14:32:32 **** Incremental Build of configuration Debug for project Section2d ****
 make -j8 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/2c.d" -MT"Src/2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/2c.o" "../Src/2c.s"
-arm-none-eabi-gcc -o "Section2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\georg\Documents\GitHub\MTRX2700\Assignment1\S2\Section2c\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Section2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+arm-none-eabi-size  Section2d.elf 
+   text	   data	    bss	    dec	    hex	filename
+    772	     16	   1568	   2356	    934	Section2d.elf
+Finished building: default.size.stdout
+ 
+14:33:33 **** Incremental Build of configuration Debug for project Section2d ****
+make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/2d.d" -MT"Src/2d.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/2d.o" "../Src/2d.s"
+arm-none-eabi-gcc -o "Section2d.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\georg\Documents\GitHub\MTRX2700\Assignment1\S2\Section2d\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Section2d.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-closer.o): in function `_close_r':
 (.text._close_r+0xc): warning: _close is not implemented and will always fail
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lseekr.o): in function `_lseek_r':
@@ -97,20 +121,20 @@ C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube
 (.text._read_r+0x10): warning: _read is not implemented and will always fail
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-writer.o): in function `_write_r':
 (.text._write_r+0x10): warning: _write is not implemented and will always fail
-Finished building target: Section2c.elf
+Finished building target: Section2d.elf
  
-arm-none-eabi-size  Section2c.elf 
-arm-none-eabi-objdump -h -S Section2c.elf  > "Section2c.list"
+arm-none-eabi-size  Section2d.elf 
+arm-none-eabi-objdump -h -S Section2d.elf  > "Section2d.list"
    text	   data	    bss	    dec	    hex	filename
-    780	      8	   1568	   2356	    934	Section2c.elf
+    768	     16	   1568	   2352	    930	Section2d.elf
 Finished building: default.size.stdout
  
-Finished building: Section2c.list
+Finished building: Section2d.list
  
-11:39:00 **** Incremental Build of configuration Debug for project Section2c ****
+14:34:53 **** Incremental Build of configuration Debug for project Section2d ****
 make -j8 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/2c.d" -MT"Src/2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/2c.o" "../Src/2c.s"
-arm-none-eabi-gcc -o "Section2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\georg\Documents\GitHub\MTRX2700\Assignment1\S2\Section2c\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Section2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/2d.d" -MT"Src/2d.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/2d.o" "../Src/2d.s"
+arm-none-eabi-gcc -o "Section2d.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\georg\Documents\GitHub\MTRX2700\Assignment1\S2\Section2d\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Section2d.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-closer.o): in function `_close_r':
 (.text._close_r+0xc): warning: _close is not implemented and will always fail
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lseekr.o): in function `_lseek_r':
@@ -119,27 +143,20 @@ C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube
 (.text._read_r+0x10): warning: _read is not implemented and will always fail
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-writer.o): in function `_write_r':
 (.text._write_r+0x10): warning: _write is not implemented and will always fail
-Finished building target: Section2c.elf
+Finished building target: Section2d.elf
  
-arm-none-eabi-size  Section2c.elf 
-arm-none-eabi-objdump -h -S Section2c.elf  > "Section2c.list"
+arm-none-eabi-size  Section2d.elf 
+arm-none-eabi-objdump -h -S Section2d.elf  > "Section2d.list"
    text	   data	    bss	    dec	    hex	filename
-    780	      8	   1568	   2356	    934	Section2c.elf
+    768	     16	   1568	   2352	    930	Section2d.elf
 Finished building: default.size.stdout
  
-Finished building: Section2c.list
+Finished building: Section2d.list
  
-11:44:36 **** Incremental Build of configuration Debug for project Section2c ****
+14:35:29 **** Incremental Build of configuration Debug for project Section2d ****
 make -j8 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/2c.d" -MT"Src/2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/2c.o" "../Src/2c.s"
-../Src/2c.s: Assembler messages:
-../Src/2c.s:21: Error: cannot use register index with PC-relative addressing -- `strb R4,#0'
-make: *** [Src/subdir.mk:25: Src/2c.o] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-11:45:07 **** Incremental Build of configuration Debug for project Section2c ****
-make -j8 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/2c.d" -MT"Src/2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/2c.o" "../Src/2c.s"
-arm-none-eabi-gcc -o "Section2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\georg\Documents\GitHub\MTRX2700\Assignment1\S2\Section2c\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Section2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/2d.d" -MT"Src/2d.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/2d.o" "../Src/2d.s"
+arm-none-eabi-gcc -o "Section2d.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\georg\Documents\GitHub\MTRX2700\Assignment1\S2\Section2d\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Section2d.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-closer.o): in function `_close_r':
 (.text._close_r+0xc): warning: _close is not implemented and will always fail
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lseekr.o): in function `_lseek_r':
@@ -148,27 +165,20 @@ C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube
 (.text._read_r+0x10): warning: _read is not implemented and will always fail
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-writer.o): in function `_write_r':
 (.text._write_r+0x10): warning: _write is not implemented and will always fail
-Finished building target: Section2c.elf
+Finished building target: Section2d.elf
  
-arm-none-eabi-size  Section2c.elf 
-arm-none-eabi-objdump -h -S Section2c.elf  > "Section2c.list"
+arm-none-eabi-size  Section2d.elf 
+arm-none-eabi-objdump -h -S Section2d.elf  > "Section2d.list"
    text	   data	    bss	    dec	    hex	filename
-    780	      8	   1568	   2356	    934	Section2c.elf
+    776	     16	   1568	   2360	    938	Section2d.elf
 Finished building: default.size.stdout
  
-Finished building: Section2c.list
+Finished building: Section2d.list
  
-11:45:40 **** Incremental Build of configuration Debug for project Section2c ****
+14:39:32 **** Incremental Build of configuration Debug for project Section2d ****
 make -j8 all 
-arm-none-eabi-size  Section2c.elf 
-   text	   data	    bss	    dec	    hex	filename
-    780	      8	   1568	   2356	    934	Section2c.elf
-Finished building: default.size.stdout
- 
-11:47:35 **** Incremental Build of configuration Debug for project Section2c ****
-make -j8 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/2c.d" -MT"Src/2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/2c.o" "../Src/2c.s"
-arm-none-eabi-gcc -o "Section2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\georg\Documents\GitHub\MTRX2700\Assignment1\S2\Section2c\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Section2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/2d.d" -MT"Src/2d.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/2d.o" "../Src/2d.s"
+arm-none-eabi-gcc -o "Section2d.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\georg\Documents\GitHub\MTRX2700\Assignment1\S2\Section2d\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Section2d.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-closer.o): in function `_close_r':
 (.text._close_r+0xc): warning: _close is not implemented and will always fail
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lseekr.o): in function `_lseek_r':
@@ -177,27 +187,27 @@ C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube
 (.text._read_r+0x10): warning: _read is not implemented and will always fail
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-writer.o): in function `_write_r':
 (.text._write_r+0x10): warning: _write is not implemented and will always fail
-Finished building target: Section2c.elf
+Finished building target: Section2d.elf
  
-arm-none-eabi-size  Section2c.elf 
-arm-none-eabi-objdump -h -S Section2c.elf  > "Section2c.list"
+arm-none-eabi-size  Section2d.elf 
+arm-none-eabi-objdump -h -S Section2d.elf  > "Section2d.list"
    text	   data	    bss	    dec	    hex	filename
-    780	      8	   1568	   2356	    934	Section2c.elf
+    780	     16	   1568	   2364	    93c	Section2d.elf
 Finished building: default.size.stdout
  
-Finished building: Section2c.list
+Finished building: Section2d.list
  
-11:49:10 **** Incremental Build of configuration Debug for project Section2c ****
+14:40:18 **** Incremental Build of configuration Debug for project Section2d ****
 make -j8 all 
-arm-none-eabi-size  Section2c.elf 
+arm-none-eabi-size  Section2d.elf 
    text	   data	    bss	    dec	    hex	filename
-    780	      8	   1568	   2356	    934	Section2c.elf
+    780	     16	   1568	   2364	    93c	Section2d.elf
 Finished building: default.size.stdout
  
-11:51:43 **** Incremental Build of configuration Debug for project Section2c ****
+14:47:05 **** Incremental Build of configuration Debug for project Section2d ****
 make -j8 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/2c.d" -MT"Src/2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/2c.o" "../Src/2c.s"
-arm-none-eabi-gcc -o "Section2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\georg\Documents\GitHub\MTRX2700\Assignment1\S2\Section2c\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Section2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/2d.d" -MT"Src/2d.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/2d.o" "../Src/2d.s"
+arm-none-eabi-gcc -o "Section2d.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\georg\Documents\GitHub\MTRX2700\Assignment1\S2\Section2d\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Section2d.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-closer.o): in function `_close_r':
 (.text._close_r+0xc): warning: _close is not implemented and will always fail
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lseekr.o): in function `_lseek_r':
@@ -206,27 +216,20 @@ C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube
 (.text._read_r+0x10): warning: _read is not implemented and will always fail
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-writer.o): in function `_write_r':
 (.text._write_r+0x10): warning: _write is not implemented and will always fail
-Finished building target: Section2c.elf
+Finished building target: Section2d.elf
  
-arm-none-eabi-size  Section2c.elf 
-arm-none-eabi-objdump -h -S Section2c.elf  > "Section2c.list"
+arm-none-eabi-size  Section2d.elf 
+arm-none-eabi-objdump -h -S Section2d.elf  > "Section2d.list"
    text	   data	    bss	    dec	    hex	filename
-    780	      8	   1568	   2356	    934	Section2c.elf
+    800	     16	   1568	   2384	    950	Section2d.elf
 Finished building: default.size.stdout
  
-Finished building: Section2c.list
+Finished building: Section2d.list
  
-11:53:28 **** Incremental Build of configuration Debug for project Section2c ****
+14:48:08 **** Incremental Build of configuration Debug for project Section2d ****
 make -j8 all 
-arm-none-eabi-size  Section2c.elf 
-   text	   data	    bss	    dec	    hex	filename
-    780	      8	   1568	   2356	    934	Section2c.elf
-Finished building: default.size.stdout
- 
-11:55:38 **** Incremental Build of configuration Debug for project Section2c ****
-make -j8 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/2c.d" -MT"Src/2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/2c.o" "../Src/2c.s"
-arm-none-eabi-gcc -o "Section2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\georg\Documents\GitHub\MTRX2700\Assignment1\S2\Section2c\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Section2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/2d.d" -MT"Src/2d.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/2d.o" "../Src/2d.s"
+arm-none-eabi-gcc -o "Section2d.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\georg\Documents\GitHub\MTRX2700\Assignment1\S2\Section2d\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Section2d.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-closer.o): in function `_close_r':
 (.text._close_r+0xc): warning: _close is not implemented and will always fail
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lseekr.o): in function `_lseek_r':
@@ -235,20 +238,27 @@ C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube
 (.text._read_r+0x10): warning: _read is not implemented and will always fail
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-writer.o): in function `_write_r':
 (.text._write_r+0x10): warning: _write is not implemented and will always fail
-Finished building target: Section2c.elf
+Finished building target: Section2d.elf
  
-arm-none-eabi-size  Section2c.elf 
-arm-none-eabi-objdump -h -S Section2c.elf  > "Section2c.list"
+arm-none-eabi-size  Section2d.elf 
+arm-none-eabi-objdump -h -S Section2d.elf  > "Section2d.list"
    text	   data	    bss	    dec	    hex	filename
-    780	      8	   1568	   2356	    934	Section2c.elf
+    800	     12	   1564	   2376	    948	Section2d.elf
 Finished building: default.size.stdout
  
-Finished building: Section2c.list
+Finished building: Section2d.list
  
-11:59:20 **** Incremental Build of configuration Debug for project Section2c ****
+14:58:28 **** Incremental Build of configuration Debug for project Section2d ****
 make -j8 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/2c.d" -MT"Src/2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/2c.o" "../Src/2c.s"
-arm-none-eabi-gcc -o "Section2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\georg\Documents\GitHub\MTRX2700\Assignment1\S2\Section2c\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Section2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+arm-none-eabi-size  Section2d.elf 
+   text	   data	    bss	    dec	    hex	filename
+    800	     12	   1564	   2376	    948	Section2d.elf
+Finished building: default.size.stdout
+ 
+14:58:55 **** Incremental Build of configuration Debug for project Section2d ****
+make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/2d.d" -MT"Src/2d.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/2d.o" "../Src/2d.s"
+arm-none-eabi-gcc -o "Section2d.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\georg\Documents\GitHub\MTRX2700\Assignment1\S2\Section2d\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Section2d.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-closer.o): in function `_close_r':
 (.text._close_r+0xc): warning: _close is not implemented and will always fail
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lseekr.o): in function `_lseek_r':
@@ -257,27 +267,27 @@ C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube
 (.text._read_r+0x10): warning: _read is not implemented and will always fail
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-writer.o): in function `_write_r':
 (.text._write_r+0x10): warning: _write is not implemented and will always fail
-Finished building target: Section2c.elf
+Finished building target: Section2d.elf
  
-arm-none-eabi-size  Section2c.elf 
-arm-none-eabi-objdump -h -S Section2c.elf  > "Section2c.list"
+arm-none-eabi-size  Section2d.elf 
+arm-none-eabi-objdump -h -S Section2d.elf  > "Section2d.list"
    text	   data	    bss	    dec	    hex	filename
-    780	      8	   1568	   2356	    934	Section2c.elf
+    800	     16	   1568	   2384	    950	Section2d.elf
 Finished building: default.size.stdout
  
-Finished building: Section2c.list
+Finished building: Section2d.list
  
-23:05:59 **** Incremental Build of configuration Debug for project Section2c ****
+14:59:37 **** Incremental Build of configuration Debug for project Section2d ****
 make -j8 all 
-arm-none-eabi-size  Section2c.elf 
+arm-none-eabi-size  Section2d.elf 
    text	   data	    bss	    dec	    hex	filename
-    780	      8	   1568	   2356	    934	Section2c.elf
+    800	     16	   1568	   2384	    950	Section2d.elf
 Finished building: default.size.stdout
  
-23:07:27 **** Incremental Build of configuration Debug for project Section2c ****
+15:00:42 **** Incremental Build of configuration Debug for project Section2d ****
 make -j8 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/2c.d" -MT"Src/2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/2c.o" "../Src/2c.s"
-arm-none-eabi-gcc -o "Section2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\georg\Documents\GitHub\MTRX2700\Assignment1\S2\Section2c\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Section2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/2d.d" -MT"Src/2d.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/2d.o" "../Src/2d.s"
+arm-none-eabi-gcc -o "Section2d.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\georg\Documents\GitHub\MTRX2700\Assignment1\S2\Section2d\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Section2d.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-closer.o): in function `_close_r':
 (.text._close_r+0xc): warning: _close is not implemented and will always fail
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lseekr.o): in function `_lseek_r':
@@ -286,20 +296,20 @@ C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube
 (.text._read_r+0x10): warning: _read is not implemented and will always fail
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-writer.o): in function `_write_r':
 (.text._write_r+0x10): warning: _write is not implemented and will always fail
-Finished building target: Section2c.elf
+Finished building target: Section2d.elf
  
-arm-none-eabi-size  Section2c.elf 
-arm-none-eabi-objdump -h -S Section2c.elf  > "Section2c.list"
+arm-none-eabi-size  Section2d.elf 
+arm-none-eabi-objdump -h -S Section2d.elf  > "Section2d.list"
    text	   data	    bss	    dec	    hex	filename
-    780	      8	   1568	   2356	    934	Section2c.elf
+    800	     12	   1564	   2376	    948	Section2d.elf
 Finished building: default.size.stdout
  
-Finished building: Section2c.list
+Finished building: Section2d.list
  
-23:14:22 **** Incremental Build of configuration Debug for project Section2c ****
+15:02:07 **** Incremental Build of configuration Debug for project Section2d ****
 make -j8 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/2c.d" -MT"Src/2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/2c.o" "../Src/2c.s"
-arm-none-eabi-gcc -o "Section2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\georg\Documents\GitHub\MTRX2700\Assignment1\S2\Section2c\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Section2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/2d.d" -MT"Src/2d.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/2d.o" "../Src/2d.s"
+arm-none-eabi-gcc -o "Section2d.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\georg\Documents\GitHub\MTRX2700\Assignment1\S2\Section2d\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Section2d.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-closer.o): in function `_close_r':
 (.text._close_r+0xc): warning: _close is not implemented and will always fail
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lseekr.o): in function `_lseek_r':
@@ -308,143 +318,13 @@ C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube
 (.text._read_r+0x10): warning: _read is not implemented and will always fail
 C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-writer.o): in function `_write_r':
 (.text._write_r+0x10): warning: _write is not implemented and will always fail
-Finished building target: Section2c.elf
+Finished building target: Section2d.elf
  
-arm-none-eabi-size  Section2c.elf 
-arm-none-eabi-objdump -h -S Section2c.elf  > "Section2c.list"
+arm-none-eabi-size  Section2d.elf 
+arm-none-eabi-objdump -h -S Section2d.elf  > "Section2d.list"
    text	   data	    bss	    dec	    hex	filename
-    792	      8	   1568	   2368	    940	Section2c.elf
+    800	     12	   1564	   2376	    948	Section2d.elf
 Finished building: default.size.stdout
  
-Finished building: Section2c.list
- 
-23:14:57 **** Incremental Build of configuration Debug for project Section2c ****
-make -j8 all 
-arm-none-eabi-size  Section2c.elf 
-   text	   data	    bss	    dec	    hex	filename
-    792	      8	   1568	   2368	    940	Section2c.elf
-Finished building: default.size.stdout
- 
-23:15:51 **** Incremental Build of configuration Debug for project Section2c ****
-make -j8 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/2c.d" -MT"Src/2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/2c.o" "../Src/2c.s"
-arm-none-eabi-gcc -o "Section2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\georg\Documents\GitHub\MTRX2700\Assignment1\S2\Section2c\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Section2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-closer.o): in function `_close_r':
-(.text._close_r+0xc): warning: _close is not implemented and will always fail
-C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lseekr.o): in function `_lseek_r':
-(.text._lseek_r+0x10): warning: _lseek is not implemented and will always fail
-C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-readr.o): in function `_read_r':
-(.text._read_r+0x10): warning: _read is not implemented and will always fail
-C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-writer.o): in function `_write_r':
-(.text._write_r+0x10): warning: _write is not implemented and will always fail
-Finished building target: Section2c.elf
- 
-arm-none-eabi-size  Section2c.elf 
-arm-none-eabi-objdump -h -S Section2c.elf  > "Section2c.list"
-   text	   data	    bss	    dec	    hex	filename
-    792	      8	   1568	   2368	    940	Section2c.elf
-Finished building: default.size.stdout
- 
-Finished building: Section2c.list
- 
-23:16:39 **** Incremental Build of configuration Debug for project Section2c ****
-make -j8 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/2c.d" -MT"Src/2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/2c.o" "../Src/2c.s"
-arm-none-eabi-gcc -o "Section2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\georg\Documents\GitHub\MTRX2700\Assignment1\S2\Section2c\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Section2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-closer.o): in function `_close_r':
-(.text._close_r+0xc): warning: _close is not implemented and will always fail
-C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lseekr.o): in function `_lseek_r':
-(.text._lseek_r+0x10): warning: _lseek is not implemented and will always fail
-C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-readr.o): in function `_read_r':
-(.text._read_r+0x10): warning: _read is not implemented and will always fail
-C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-writer.o): in function `_write_r':
-(.text._write_r+0x10): warning: _write is not implemented and will always fail
-Finished building target: Section2c.elf
- 
-arm-none-eabi-size  Section2c.elf 
-arm-none-eabi-objdump -h -S Section2c.elf  > "Section2c.list"
-   text	   data	    bss	    dec	    hex	filename
-    788	      8	   1568	   2364	    93c	Section2c.elf
-Finished building: default.size.stdout
- 
-Finished building: Section2c.list
- 
-23:18:23 **** Incremental Build of configuration Debug for project Section2c ****
-make -j8 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/2c.d" -MT"Src/2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/2c.o" "../Src/2c.s"
-arm-none-eabi-gcc -o "Section2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\georg\Documents\GitHub\MTRX2700\Assignment1\S2\Section2c\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Section2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-closer.o): in function `_close_r':
-(.text._close_r+0xc): warning: _close is not implemented and will always fail
-C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lseekr.o): in function `_lseek_r':
-(.text._lseek_r+0x10): warning: _lseek is not implemented and will always fail
-C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-readr.o): in function `_read_r':
-(.text._read_r+0x10): warning: _read is not implemented and will always fail
-C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-writer.o): in function `_write_r':
-(.text._write_r+0x10): warning: _write is not implemented and will always fail
-Finished building target: Section2c.elf
- 
-arm-none-eabi-size  Section2c.elf 
-arm-none-eabi-objdump -h -S Section2c.elf  > "Section2c.list"
-   text	   data	    bss	    dec	    hex	filename
-    792	      8	   1568	   2368	    940	Section2c.elf
-Finished building: default.size.stdout
- 
-Finished building: Section2c.list
- 
-23:21:26 **** Incremental Build of configuration Debug for project Section2c ****
-make -j8 all 
-arm-none-eabi-size  Section2c.elf 
-   text	   data	    bss	    dec	    hex	filename
-    792	      8	   1568	   2368	    940	Section2c.elf
-Finished building: default.size.stdout
- 
-23:23:00 **** Incremental Build of configuration Debug for project Section2c ****
-make -j8 all 
-arm-none-eabi-size  Section2c.elf 
-   text	   data	    bss	    dec	    hex	filename
-    792	      8	   1568	   2368	    940	Section2c.elf
-Finished building: default.size.stdout
- 
-23:23:59 **** Incremental Build of configuration Debug for project Section2c ****
-make -j8 all 
-arm-none-eabi-size  Section2c.elf 
-   text	   data	    bss	    dec	    hex	filename
-    792	      8	   1568	   2368	    940	Section2c.elf
-Finished building: default.size.stdout
- 
-23:25:50 **** Incremental Build of configuration Debug for project Section2c ****
-make -j8 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Src/2c.d" -MT"Src/2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/2c.o" "../Src/2c.s"
-arm-none-eabi-gcc -o "Section2c.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\georg\Documents\GitHub\MTRX2700\Assignment1\S2\Section2c\STM32F303VCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Section2c.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-closer.o): in function `_close_r':
-(.text._close_r+0xc): warning: _close is not implemented and will always fail
-C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-lseekr.o): in function `_lseek_r':
-(.text._lseek_r+0x10): warning: _lseek is not implemented and will always fail
-C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-readr.o): in function `_read_r':
-(.text._read_r+0x10): warning: _read is not implemented and will always fail
-C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/Users/georg/Desktop/STM32CubeIDE_1.14.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-writer.o): in function `_write_r':
-(.text._write_r+0x10): warning: _write is not implemented and will always fail
-Finished building target: Section2c.elf
- 
-arm-none-eabi-size  Section2c.elf 
-arm-none-eabi-objdump -h -S Section2c.elf  > "Section2c.list"
-   text	   data	    bss	    dec	    hex	filename
-    792	      8	   1568	   2368	    940	Section2c.elf
-Finished building: default.size.stdout
- 
-Finished building: Section2c.list
- 
-23:28:32 **** Incremental Build of configuration Debug for project Section2c ****
-make -j8 all 
-arm-none-eabi-size  Section2c.elf 
-   text	   data	    bss	    dec	    hex	filename
-    792	      8	   1568	   2368	    940	Section2c.elf
-Finished building: default.size.stdout
- 
-23:28:55 **** Incremental Build of configuration Debug for project Section2c ****
-make -j8 all 
-arm-none-eabi-size  Section2c.elf 
-   text	   data	    bss	    dec	    hex	filename
-    792	      8	   1568	   2368	    940	Section2c.elf
-Finished building: default.size.stdout
+Finished building: Section2d.list
  
