@@ -86,8 +86,6 @@ check_lowercase:
     CMP R5, #ASCII_LOWERCASE_Z
     BGT store_char
 
-
-
 	LDR R6, =MODE
 	CMP R6, #0
     BEQ Encode_l

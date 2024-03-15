@@ -1,15 +1,14 @@
-2024-03-12 15:01:58,849 [INFO] MainUpdater:2873 - connection check result : 10
-2024-03-12 15:01:59,119 [INFO] McuFinderGlobals:76 - Set McuFinderConnectedMode to true
-2024-03-12 15:01:59,121 [INFO] MultiScanPanel:200 - Auto-refresh data requested => check proxy status ongoing
-2024-03-12 15:01:59,122 [INFO] FinderPluginLoader:95 - Searching for filters in installed packs
-2024-03-12 15:02:00,532 [INFO] LoadUrlFilesThread:185 - End of LoadServerUrlFiles without Thread
-2024-03-12 15:02:00,532 [INFO] DetailPanel:341 - Set advertising image to C:/Users/georg/STM32Cube/Repository/\en.prom-stm32wl3-mcu-finder.jpg
-2024-03-12 15:02:03,960 [INFO] MultiScanPanel:200 - Auto-refresh data requested => check proxy status ongoing
-2024-03-12 15:02:04,068 [INFO] LoadUrlFilesThread:185 - End of LoadServerUrlFiles without Thread
-2024-03-12 15:02:04,068 [INFO] DetailPanel:341 - Set advertising image to C:/Users/georg/STM32Cube/Repository/\en.prom-stm32wl3-mcu-finder.jpg
-2024-03-12 15:02:06,378 [INFO] ApiDb:581 - Connected to CubeFinder SQLite database (C:\Users\georg\.stmcufinder\plugins\mcufinder\mcu\cube-finder-db.db)
-2024-03-12 15:02:20,290 [INFO] McuFinderGlobals:76 - Set McuFinderConnectedMode to true
-2024-03-12 15:02:20,293 [INFO] ApiDb:448 - Save user favorites file C:\Users\georg/.stm32cubeide/favorites.mcus.txt: 0 item(s)
-2024-03-12 15:02:20,293 [INFO] ApiDb:452 - User favorites MCUs=[]
-2024-03-12 15:02:20,295 [INFO] ApiDb:448 - Save user favorites file C:\Users\georg/.stm32cubeide/favorites.boards.txt: 1 item(s)
-2024-03-12 15:02:20,296 [INFO] ApiDb:452 - User favorites Boards=[STM32F3DISCOVERY]
+2024-03-13 15:36:29,828 [INFO] MainUpdater:2873 - connection check result : 10
+2024-03-13 15:36:30,047 [INFO] McuFinderGlobals:76 - Set McuFinderConnectedMode to true
+2024-03-13 15:36:30,049 [INFO] MultiScanPanel:200 - Auto-refresh data requested => check proxy status ongoing
+2024-03-13 15:36:30,050 [INFO] FinderPluginLoader:95 - Searching for filters in installed packs
+2024-03-13 15:36:31,013 [INFO] LoadUrlFilesThread:185 - End of LoadServerUrlFiles without Thread
+2024-03-13 15:36:31,013 [INFO] DetailPanel:341 - Set advertising image to C:/Users/georg/STM32Cube/Repository/\en.prom-stm32wl3-mcu-finder.jpg
+2024-03-13 15:36:41,495 [INFO] MultiScanPanel:200 - Auto-refresh data requested => check proxy status ongoing
+2024-03-13 15:36:41,589 [INFO] LoadUrlFilesThread:185 - End of LoadServerUrlFiles without Thread
+2024-03-13 15:36:41,589 [INFO] DetailPanel:341 - Set advertising image to C:/Users/georg/STM32Cube/Repository/\en.prom-stm32wl3-mcu-finder.jpg
+2024-03-13 15:37:01,575 [INFO] McuFinderGlobals:76 - Set McuFinderConnectedMode to true
+2024-03-13 15:37:01,580 [INFO] ApiDb:448 - Save user favorites file C:\Users\georg/.stm32cubeide/favorites.mcus.txt: 0 item(s)
+2024-03-13 15:37:01,580 [INFO] ApiDb:452 - User favorites MCUs=[]
+2024-03-13 15:37:01,584 [INFO] ApiDb:448 - Save user favorites file C:\Users\georg/.stm32cubeide/favorites.boards.txt: 1 item(s)
+2024-03-13 15:37:01,586 [INFO] ApiDb:452 - User favorites Boards=[STM32F3DISCOVERY]

@@ -1,0 +1,52 @@
+.syntax unified
+.thumb
+
+#.global delay
+.equ RCC_APB1ENR, 0x4002101C    // RCC APB1ENR register address
+.equ TIM2_CR1, 0x40000000        // Timer control register 1 address
+.equ TIM2_PSC, 0x40000028        // Timer prescaler register address
+.equ TIM2_ARR, 0x4000002C        // Timer auto-reload register address
+.equ TIM2_SR, 0x40000010         // Timer status register address
+
+delay:
+    push {lr}             // Save link register
+
+    // Enable clock for Timer 2
+    ldr r0, =RCC_APB1ENR
+    ldr r1, [r0]
+    orr r1, r1, #(1 << 0)  // Set bit 0 to enable TIM2 clock
+    str r1, [r0]
+
+    // Configure Timer 2
+    ldr r0, =TIM2_CR1      // Load address of TIM2_CR1
+    mov r1, #0             // Clear all bits
+    str r1, [r0]           // Store back to CR1
+
+    // Set prescaler for desired clock frequency (adjust according to your setup)
+    ldr r0, =TIM2_PSC
+    mov r1, #1000            // Assuming HCLK is 72MHz, prescaler = 71
+    str r1, [r0]
+
+    // Calculate the ARR value for the desired delay time (adjust according to your desired delay)
+    ldr r0, =TIM2_ARR
+    mov r1, #0x1F40        // 8000 cycles at 72MHz, gives a delay of approximately 0.1 seconds
+    str r1, [r0]
+
+    // Enable Timer 2
+    ldr r0, =TIM2_CR1
+    mov r1, #(1 << 0)      // Set bit 0 (CEN) to enable the timer
+    str r1, [r0]
+
+delay_loop:
+    // Wait until the timer reaches zero (UIF flag is set)
+    ldr r0, =TIM2_SR       // Load the status register
+    ldr r1, [r0]
+    tst r1, #(1 << 0)      // Check the UIF (Update Interrupt Flag) bit
+    beq delay_loop         // If the UIF bit is not set, keep looping
+
+    // Clear the UIF bit by writing 0 to it
+    ldr r0, =TIM2_SR
+    mov r1, #0             // Clear the UIF bit
+    str r1, [r0]
+
+    pop {pc}               // Return from function
