@@ -193,8 +193,8 @@ button_pressed:
  8000238:	f1b9 0f7a 	cmp.w	r9, #122	; 0x7a
 	BEQ Reset_Letter
  800023c:	d00a      	beq.n	8000254 <Reset_Letter>
-    MOV R9, #ASCII_LOWERCASE_A
- 800023e:	f04f 0961 	mov.w	r9, #97	; 0x61
+    MOV R9, #ASCII_LOWERCASE_A + 1
+ 800023e:	f04f 0962 	mov.w	r9, #98	; 0x62
    	MOV R4, #0              //  reset LED pattern into a register
  8000242:	f04f 0400 	mov.w	r4, #0
     LDRB R5, =0b00000001 // reset comparison bit

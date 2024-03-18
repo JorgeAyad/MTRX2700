@@ -2,40 +2,27 @@
 .thumb
 
 .global main
-
+@ gotten fro stewart's W03 UART example
 #include "initialise.s"
-
-.data
-@ define variables
 
 
 .align
-@ can allocate as an array
-@incoming_buffer: .byte 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-@ or allocate just as a block of space with this number of bytes
+@buffer to hold the recieving bytes (letters)
 incoming_buffer: .space 62
-
-@ One strategy is to keep a variable that lets you know the size of the buffer.
+@buffer length
 incoming_counter: .byte 62
 
-@ Define a string
-tx_string: .asciz "abcdefgh\r\n"
-@ one way to know the length of the string is to just define it as a variable
-tx_length: .byte 10
+@length of string and what is
+tx_string: .asciz "abcd\n"
+tx_length: .byte 64
 
 
-.text
-@ define text
 
 
-@ this is the entry function called from the c file
+
 main:
-
-	@ in class run through the functions to perform the config of the ports
-	@ for more details on changing the UART, refer to the week 3 live lecture/tutorial session.
-
 	BL initialise_power
-	@BL change_clock_speed
+	BL change_clock_speed
 	BL enable_peripheral_clocks
 	BL enable_uart
 
@@ -58,29 +45,29 @@ Recieving:
 
 
 Checking_UART_Status:
+
 	LDR R0, =UART @ the base address for the register to set up UART
 	LDR R1, [R0, USART_ISR] @ load the status of the UART
 
-	TST R1, 1 << UART_ORE | 1 << UART_FE  @ checking for erros with UART transmitting and recieving terminals
+	TST R1, 1 << UART_ORE | 1 << UART_FE  @ 'AND' the current status with the bit mask that we are interested in
+						   @ NOTE, the ANDS is used so that if the result is '0' the z register flag is set
 
-	BNE clear_error @ if there is an error then we must clear the error
+	BNE clear_error
 
-	TST R1, 1 << UART_RXNE
+	TST R1, 1 << UART_RXNE @ 'AND' the current status with the bit mask that we are interested in
+							  @ NOTE, the ANDS is used so that if the result is '0' the z register flag is set
 
-	BNE Checking_UART_Status @ loop back to check status again if the flag indicates there is no byte waiting
-	LDRB R4, [R0, USART_TDR]
-	LDRB R3, [R0, USART_RDR] @ load the lowest byte (RDR bits [0:7] for an 8 bit read). Checking for the recieve data register
-	STRB R3, [R6, R8] @ storing first byte of space in our RDR register (this is where we will be recieving the data)
-	ADD R9, R3, R8  @ Calculate the destination address based on the received data address (R3) and offset (R8)
-	STRB R4, [R9]   @ Store the transmitted data (R4) at the calculated destination address
+	BEQ Checking_UART_Status @ loop back to check status again if the flag indicates there is no byte waiting
 
-	ADD R8, #1 @ our counter
+	LDRB R3, [R0, USART_RDR] @ load the lowest byte (RDR bits [0:7] for an 8 bit read)
+	STRB R3, [R6, R8]
+	ADD R8, #1
 
-
-
-	CMP R7, R8 @ checking for if we are larger than the space created
-	BGT no_reset @ resetting
+	CMP R7, R8
+	BGT no_reset
 	MOV R8, #0
+
+	BX LR
 
 
 no_reset:
@@ -125,8 +112,9 @@ tx_uart:
 
 	@ load the next value in the string into the transmit buffer for the specified UART
 	LDRB R5, [R3], #1
+	CMP R5, #'\n'
+	BEQ End
 	STRB R5, [R0, USART_TDR]
-	BL Recieving
 
 	@ note the use of the S on the end of the SUBS, this means that the register flags are set
 	@ and this subtraction can be used to make a branch
@@ -145,11 +133,13 @@ tx_uart:
 @ a very simple delay
 @ you will need to find better ways of doing this
 delay_loop:
-	LDR R9, =0xfffff
+	LDR R9, =0xFFFFFF
 
 delay_inner:
-	@ notice the SUB has an S on the end, this means it alters the condition register
-	@ and can be used to make a branching decision.
+
 	SUBS R9, #1
 	BGT delay_inner
 	BX LR @ return from function call
+
+End:
+	B .

@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Transmitting/Src/defintions.s&apos; to &apos;definitions.s&apos;" description="Rename resource &apos;defintions.s&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Src/defintions.s" name="definitions.s" stamp="1710732327096" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;Transmitting/Src/intialise.s&apos; to &apos;initialise.s&apos;" description="Rename resource &apos;intialise.s&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Src/intialise.s" name="initialise.s" stamp="1710732389739" updateReferences="true"/>
+</session>
