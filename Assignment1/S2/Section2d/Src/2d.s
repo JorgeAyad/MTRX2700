@@ -3,6 +3,7 @@
 
 #include "definitions.s"
 #include "initialise.s"
+#include "delay.s"
 
 .equ ASCII_LOWERCASE_A, 97
 .equ ASCII_LOWERCASE_Z, 122
@@ -36,9 +37,8 @@ loop:
 	LDRB R6, [R2, #IDR]    // Read the input from GPIOA IDR
     ANDS R6, #0x01          // Check if button is on
     BNE button_pressed      // Branch if button is pressed
-
+	#BL delay
 	LDRB R8, [R7], #1      //the selected letter we are on
-
 	CMP R8, #0             // Check for null terminator
     BEQ end                // If null terminator found, end loop
 
@@ -51,6 +51,7 @@ LED_Counter:
 	ORR R4, R4, R5 // Set the LED pattern
     LSL R5, R5, #0x01
     ADD R10, R10, #1
+    @BL delay
     B loop
 
 

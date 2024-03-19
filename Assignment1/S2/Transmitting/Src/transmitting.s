@@ -43,10 +43,9 @@ tx_loop:
 tx_uart:
 
 	LDR R1, [R0, USART_ISR] @ load the status of the UART
-	ANDS R1, 1 << UART_TXE  @ 'AND' the current status with the bit mask that we are interested in
-						    @ NOTE, the ANDS is used so that if the result is '0' the z register flag is set
+	ANDS R1, 1 << UART_TXE
 
-	@ loop back to check status again if the flag indicates there is no byte waiting
+
 	BEQ tx_uart
 
 	@ load the next value in the string into the transmit buffer for the specified UART
@@ -55,8 +54,7 @@ tx_uart:
 	BEQ End
 	STRB R5, [R0, USART_TDR]
 
-	@ note the use of the S on the end of the SUBS, this means that the register flags are set
-	@ and this subtraction can be used to make a branch
+
 	SUBS R4, #1
 
 	@ keep looping while there are more characters to send
@@ -72,7 +70,7 @@ tx_uart:
 @ a very simple delay
 @ you will need to find better ways of doing this
 delay_loop:
-	LDR R9, =0xFFFFFF
+	LDR R9, =0x3
 
 delay_inner:
 

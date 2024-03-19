@@ -336,11 +336,10 @@ tx_uart:
 
 	LDR R1, [R0, USART_ISR] @ load the status of the UART
  80002d8:	69c1      	ldr	r1, [r0, #28]
-	ANDS R1, 1 << UART_TXE  @ 'AND' the current status with the bit mask that we are interested in
+	ANDS R1, 1 << UART_TXE
  80002da:	f011 0180 	ands.w	r1, r1, #128	; 0x80
-						    @ NOTE, the ANDS is used so that if the result is '0' the z register flag is set
 
-	@ loop back to check status again if the flag indicates there is no byte waiting
+
 	BEQ tx_uart
  80002de:	d0fb      	beq.n	80002d8 <tx_uart>
 
@@ -354,8 +353,7 @@ tx_uart:
 	STRB R5, [R0, USART_TDR]
  80002e8:	f880 5028 	strb.w	r5, [r0, #40]	; 0x28
 
-	@ note the use of the S on the end of the SUBS, this means that the register flags are set
-	@ and this subtraction can be used to make a branch
+
 	SUBS R4, #1
  80002ec:	3c01      	subs	r4, #1
 
@@ -377,8 +375,8 @@ tx_uart:
 @ a very simple delay
 @ you will need to find better ways of doing this
 delay_loop:
-	LDR R9, =0xFFFFFF
- 80002f6:	f06f 497f 	mvn.w	r9, #4278190080	; 0xff000000
+	LDR R9, =0x3
+ 80002f6:	f04f 0903 	mov.w	r9, #3
 
 080002fa <delay_inner>:
 

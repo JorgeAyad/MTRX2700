@@ -14,7 +14,7 @@ incoming_counter: .byte 62
 
 @length of string and what is
 tx_string: .asciz "abcd\n"
-tx_length: .byte 64
+tx_length: .byte 62
 
 
 
@@ -62,6 +62,7 @@ Checking_UART_Status:
 	LDRB R3, [R0, USART_RDR] @ load the lowest byte (RDR bits [0:7] for an 8 bit read)
 	STRB R3, [R6, R8]
 	ADD R8, #1
+	B delay_loop
 
 	CMP R7, R8
 	BGT no_reset
@@ -87,6 +88,7 @@ clear_error:
 	STR R1, [R0, USART_ICR]
 	B Checking_UART_Status
 
+
 tx_loop:
 
 	@ the base address for the register to set up UART
@@ -104,10 +106,9 @@ tx_loop:
 tx_uart:
 
 	LDR R1, [R0, USART_ISR] @ load the status of the UART
-	ANDS R1, 1 << UART_TXE  @ 'AND' the current status with the bit mask that we are interested in
-						    @ NOTE, the ANDS is used so that if the result is '0' the z register flag is set
+	ANDS R1, 1 << UART_TXE
 
-	@ loop back to check status again if the flag indicates there is no byte waiting
+
 	BEQ tx_uart
 
 	@ load the next value in the string into the transmit buffer for the specified UART
@@ -116,8 +117,7 @@ tx_uart:
 	BEQ End
 	STRB R5, [R0, USART_TDR]
 
-	@ note the use of the S on the end of the SUBS, this means that the register flags are set
-	@ and this subtraction can be used to make a branch
+
 	SUBS R4, #1
 
 	@ keep looping while there are more characters to send
@@ -133,7 +133,7 @@ tx_uart:
 @ a very simple delay
 @ you will need to find better ways of doing this
 delay_loop:
-	LDR R9, =0xFFFFFF
+	LDR R9, =0x3
 
 delay_inner:
 

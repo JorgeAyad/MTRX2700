@@ -7,16 +7,19 @@
 S_SRCS += \
 ../Src/2d.s \
 ../Src/definitions.s \
+../Src/delay.s \
 ../Src/initialise.s 
 
 OBJS += \
 ./Src/2d.o \
 ./Src/definitions.o \
+./Src/delay.o \
 ./Src/initialise.o 
 
 S_DEPS += \
 ./Src/2d.d \
 ./Src/definitions.d \
+./Src/delay.d \
 ./Src/initialise.d 
 
 
@@ -27,7 +30,7 @@ Src/%.o: ../Src/%.s Src/subdir.mk
 clean: clean-Src
 
 clean-Src:
-	-$(RM) ./Src/2d.d ./Src/2d.o ./Src/definitions.d ./Src/definitions.o ./Src/initialise.d ./Src/initialise.o
+	-$(RM) ./Src/2d.d ./Src/2d.o ./Src/definitions.d ./Src/definitions.o ./Src/delay.d ./Src/delay.o ./Src/initialise.d ./Src/initialise.o
 
 .PHONY: clean-Src
 
