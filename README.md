@@ -15,7 +15,8 @@
     - Assist with the sections through information gathering and address finding, troubleshooting and creating modularised code for the sections
     - Create backups of code on local machine
     - Clean up Github and manage comments in codes.
-    - Do main code of the each of the sections specified above 
+    - Do main code of the each of the sections specified above
+    - Meeting Minutes
 - Tom Bray (Secion 1, 2)
     - Determine Delay functions for each of the functions for live demo
     - Proof read code and make changes for ease of functionality and usage
