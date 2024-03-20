@@ -1,6 +1,105 @@
 # MTRX2700 Group 2
 
 # MTRX Group 2 - "Group Name Here"
+##  Date - 19/3/2024
+
+Present:
+- George Ayad - Section 3
+- Peter Cruz - Section 3
+- Tom Bray - Section 4
+- Jamie - Github cleanup and proof-reading the current code
+
+Meeting Purpose:
+- Finish section 3
+- Get as much done for section 5
+- Clean up Code/clean up comments
+- 
+Previous Sections:
+- Work on Sections 3
+- Github clean up
+
+Current Items:
+- Work on Sections 3
+- Section 5
+
+New Items:
+- cleaning up comments
+
+Next Meeting Date:
+20/03/2024
+
+
+
+# MTRX2700 Group 2
+
+# MTRX Group 2 - "Group Name Here"
+##  Date - 18/3/2024
+###  Present: 
+- George Ayad - Section 3
+- Peter Cruz - Section 3
+- Tom Bray - Section 4
+- Jamie - Github cleanup and proof-reading the current code
+
+### Meeting Purpose:
+
+- Finish section 3
+- Clean up Code
+
+### Previous Sections
+  
+  - Work on Sections 3
+    
+### Current Items
+
+  - Work on Sections 3
+  - Try to get a start on Section 5 
+ 
+### New Items
+
+  - Start Section 5 
+
+### Next Meeting Date
+
+19/03/2024
+
+
+# MTRX2700 Group 2
+
+# MTRX Group 2 - "Group Name Here"
+##  Date - 16/3/2024
+###  Present: 
+- George Ayad - Section 3
+- Peter Cruz - Section 3
+- Tom Bray - Section 4 (not present)
+- Jamie - Section 3 and Github cleanup 
+### Meeting Purpose:
+
+- Code Section 3 
+- Clean up Github
+
+### Previous Sections
+  
+  - Work on Sections 2 and 3
+
+### Current Items
+
+  - Finish section 3 and start on section 5 
+ 
+### New Items
+
+  - Github cleanup 
+
+### Next Meeting Date
+
+18/03/2024
+
+
+
+
+
+# MTRX2700 Group 2
+
+# MTRX Group 2 - "Group Name Here"
 ##  Date - 6/3/2024
 ###  Present: 
 - George Ayad - Section 2
@@ -67,9 +166,6 @@
 ### Next Meeting Date
 
 6/03/2024
-
-
-
 
 
 # MTRX2700 Group 2
