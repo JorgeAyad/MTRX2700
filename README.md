@@ -10,13 +10,16 @@
     - Assist with the main parts of the section codes by applying base modularised functions for each of the sections and creating functions.
     - Do Section 4 with Timers and assist with delay functions.
     - Meeting Minutes - Change meeting minutes.
+    - Do main code of the each of the sections specified above
 - Jamie Cheng (Section 2,3)
     - Assist with the sections through information gathering and address finding, troubleshooting and creating modularised code for the sections
     - Create backups of code on local machine
-    - Clean up Github and manage comments in codes. 
+    - Clean up Github and manage comments in codes.
+    - Do main code of the each of the sections specified above 
 - Tom Bray (Secion 1, 2)
     - Determine Delay functions for each of the functions for live demo
     - Proof read code and make changes for ease of functionality and usage
+    - Do main code of the each of the sections specified above
 
 ## Overview
 
