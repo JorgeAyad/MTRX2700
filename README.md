@@ -37,4 +37,4 @@ In each of the subsection folders, the SRC folder contains the files required to
 
 ## How to test and debug.
 
-In the ssections of the codes, there are various ways of debugging and testing code like using physical indicators like LED indicators and PuTTy, or by checking the memory addresses of the stored data. This is more prominent in Section 2 and 4 where LED indicators utilised while the Memory checking is more suited to Sections 1 and 4
+In the sections of the codes, there are various ways of debugging and testing code like using physical indicators like LED indicators and PuTTy, or by checking the memory addresses of the stored data. This is more prominent in Section 2 and 4 where LED indicators utilised while the Memory checking is more suited to Sections 1 and 4
