@@ -1,4 +1,4 @@
-
+@ Taken from Stewarts digital I/O example code 
 @ Clock setting register (base address and offsets)
 .equ RCC, 0x40021000	@ base register for resetting and clock settings
 
