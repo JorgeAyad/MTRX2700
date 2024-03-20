@@ -1,4 +1,4 @@
-
+@Taken from the uart example defintitons code.
 
 @ base register for resetting and clock settings
 .equ RCC, 0x40021000
